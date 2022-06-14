@@ -27,7 +27,7 @@
           Please let us know how we did with your support request. All feedback
           is appreciated to help us improve our offering!
         </p>
-        <form target="iframe_to_remain_same_page">
+        <form method="get">
           <div class="rating-buttons">
             <label for="rate-1" class="btn-rate shadow rounded-circle"
               >1<input required type="radio" name="rate" id="rate-1" value="1"
@@ -49,16 +49,18 @@
               >5<input type="radio" name="rate" id="rate-5" value="5"
             /></label>
           </div>
-          <input type="submit" class="btn-submit shadow rounded" value="SUBMIT"></input>
+          <button type="submit" class="btn-submit shadow rounded">
+            SUBMIT
+          </button>
         </form>
-        <!-- iframe used for staying on the same page after submit -->
-        <iframe id="id_iframe" name="iframe_to_remain_same_page" style="display:none;"></iframe>
       </section>
 
       <!-- Page 2: Success -->
       <section class="wrap success shadow rounded">
         <img src="./images/illustration-thank-you.svg" alt="" />
-        <p class="success-output rounded">You selected <span id="output"></span>out of 5</p>
+        <p class="success-output rounded">
+          You selected <span id="output"></span>out of 5
+        </p>
         <h1 id="thankYou">Thank You!</h1>
         <p>
           We appreciate you taking the time to give a rating. If you ever need

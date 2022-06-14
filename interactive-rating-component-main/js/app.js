@@ -13,7 +13,8 @@ $(document).ready(function () {
   });
 
   // show Thank You and hide Rating
-  $("form").submit(function () {
+  $("form").submit(function (e) {
+    e.preventDefault;
     $(".rating").hide();
     $(".success").show().animate({
       opacity: "1",
