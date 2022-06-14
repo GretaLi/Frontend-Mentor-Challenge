@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Interactive rating component](https://gretali.github.io/Frontend-Mentor-Challenge/interactive-rating-component-main/)
+- Live Site URL: [Repository](https://github.com/GretaLi/Frontend-Mentor-Challenge/tree/main/interactive-rating-component-main)
 
 ## My process
 
