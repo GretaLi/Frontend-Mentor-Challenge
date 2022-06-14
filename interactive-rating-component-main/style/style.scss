@@ -1,0 +1,182 @@
+//color variables
+$primary: hsl(25, 97%, 53%);
+$white: hsl(0, 0%, 100%);
+$lightGray: hsl(217, 12%, 63%);
+$mediumGrey: hsl(216, 12%, 54%);
+$darkBlue: hsl(213, 19%, 18%);
+$veryDarkBlue: hsl(216, 12%, 8%);
+
+//basic setting
+* {
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+html,
+body {
+  font-family: "Overpass", sans-serif;
+  background-color: $veryDarkBlue;
+  color: $white;
+  height: 95%;
+}
+
+h1 {
+  font-size: 25px;
+}
+
+p {
+  color: $mediumGrey;
+  margin-bottom: 24px;
+  line-height: 1.5;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.container {
+  padding: 0 24px;
+  margin: 0 auto;
+  max-width: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 95%;
+}
+
+.wrap {
+  padding: 32px 24px;
+  background: $darkBlue;
+  overflow: hidden;
+}
+
+.shadow {
+  box-shadow: 0px 2px 10px #00000014;
+}
+
+.rounded {
+  border-radius: 30px;
+}
+
+.rounded-circle {
+  border-radius: 50%;
+}
+
+//hind original input-radio
+input {
+  display: none;
+}
+
+//Page 1: Rating//
+.rating {
+  &-buttons {
+    display: flex;
+    justify-content: space-around;
+  }
+  &-star {
+    display: inline-block;
+    width: 48px;
+    height: 48px;
+    background: url(../images/icon-star.svg) center center;
+    background-color: lighten($darkBlue, 10%);
+    background-repeat: no-repeat;
+  }
+}
+
+.btn-rate {
+  display: inline-block;
+  width: 48px;
+  height: 48px;
+  padding: 16px 0;
+  background-color: lighten($darkBlue, 10%);
+  color: $lightGray;
+  text-align: center;
+  font-weight: 700;
+  cursor: pointer;
+  @media (min-width: 769px) {
+    //No hover effect below 768px
+    &:hover {
+      background-color: $lightGray;
+      color: $white;
+    }
+  }
+}
+
+//rating button selected
+.active {
+  background-color: $primary;
+  color: $white;
+}
+
+.btn-submit {
+  display: block;
+  width: 100%;
+  margin-top: 24px;
+  padding: 12px 0;
+  font-size: 15px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  background-color: $primary;
+  color: $white;
+  border: none;
+  cursor: pointer;
+  @media (min-width: 769px) {
+    //No hover effect below 768px
+    &:hover {
+      background-color: $white;
+      color: $primary;
+    }
+  }
+}
+
+//Page 2: Success//
+.success {
+  display: none;
+  text-align: center;
+  opacity: 0;
+  img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 24px;
+  }
+  &-output {
+    display: inline-block;
+    padding: 8px 16px;
+    background-color: lighten($darkBlue, 10%);
+    color: $primary;
+  }
+}
+
+//animation: Thank You!
+#thankYou {
+  animation-name: rotateThankYou;
+  animation-duration: 1s;
+  animation-direction: alternate;
+  animation-iteration-count: 2;
+}
+
+@keyframes rotateThankYou {
+  from {
+    transform: scale(1);
+  }
+
+  to {
+    transform: scale(1.5);
+  }
+}
+
+//Footer//
+.attribution {
+  position: fixed;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 16px 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(228, 45%, 44%);
+  text-decoration: none;
+}
