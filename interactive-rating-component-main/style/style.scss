@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 //color variables
 $primary: hsl(25, 97%, 53%);
 $white: hsl(0, 0%, 100%);
@@ -46,7 +47,7 @@ img {
 
 .wrap {
   padding: 32px 24px;
-  background: $darkBlue;
+  background: linear-gradient(180deg, $darkBlue 0%, darken($darkBlue, 5%) 100%);
   overflow: hidden;
 }
 

@@ -1,3 +1,4 @@
+@import url("https://fonts.googleapis.com/css2?family=Overpass:wght@400;700&display=swap");
 * {
   box-sizing: border-box;
   transition: all 0.3s;
@@ -37,7 +38,7 @@ img {
 
 .wrap {
   padding: 32px 24px;
-  background: hsl(213deg, 19%, 18%);
+  background: linear-gradient(180deg, hsl(213deg, 19%, 18%) 0%, #1b2127 100%);
   overflow: hidden;
 }
 

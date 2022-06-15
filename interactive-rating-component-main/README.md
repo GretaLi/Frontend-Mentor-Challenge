@@ -14,8 +14,6 @@ This is a solution to the [Interactive rating component challenge on Frontend Me
   - [Useful resources](#useful-resources)
 - [Author](#author)
 
-**Note: Delete this note and update the table of contents based on what sections you keep.**
-
 ## Overview
 
 ### The challenge
@@ -49,7 +47,9 @@ Users should be able to:
 
 ### What I learned
 
-How to stay on the same page after clicking submit button in a form?
+**How to stay on the same page after clicking submit button in a form?**
+
+_WAS_
 
 - Add a `ifram` right after `form` and add `target` on `form` tag.
 
@@ -59,7 +59,51 @@ How to stay on the same page after clicking submit button in a form?
 </iframe>
 ```
 
-How to fade in the hiding area and overlay the previous one?
+_NOW_
+
+- Thanks to [@Gwenaël Magnenat](https://www.frontendmentor.io/solutions/interactive-rating-component-solution-using-jquery-5Ryt4NM1u0#comment-62a8b10fd6026920fcb4fcb9), I learned another method to prevent form redirection.
+- So I remove above `ifram` and use `e.preventDefault()` to avoid page refreshing after submission.
+
+```js
+$("form").submit(function (e) {
+  e.preventDefault();
+  $(".rating").hide();
+  $(".success").show().animate({
+    opacity: "1",
+  });
+  return;
+});
+```
+
+**How to print the content by using `.text()` method?**
+
+- I originally declared an array `const points = [1, 2, 3, 4, 5]` to get the point numbers.
+- With [@Gwenaël Magnenat](https://www.frontendmentor.io/solutions/interactive-rating-component-solution-using-jquery-5Ryt4NM1u0#comment-62a8b10fd6026920fcb4fcb9)'s inspiration, now I change to use `attr("value")` to print the actual value.
+
+_WAS_
+
+```js
+// output rating
+const points = [1, 2, 3, 4, 5];
+$(".btn-rate").click(function () {
+  let i = $(this).index();
+  $("#output").text(`${points[i]} `);
+});
+```
+
+_NOW_
+
+```js
+// output rating
+const points = $("input[name='rate']");
+$(".btn-rate").click(function () {
+  let i = $(this).index();
+  let print = $(points[i]).attr("value");
+  $("#output").text(`${print} `);
+});
+```
+
+**How to fade in the hiding area and overlay the previous one?**
 
 - Instead of suddenly popping out, I attempt to use jQuery `.show()` and `.animate()` method , from `opacity:0` to `opacity: 1`, to fade in the success area.
 

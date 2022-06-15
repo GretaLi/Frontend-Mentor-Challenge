@@ -6,14 +6,16 @@ $(document).ready(function () {
   });
 
   // output rating
-  const points = [1, 2, 3, 4, 5];
+  const points = $("input[name='rate']");
   $(".btn-rate").click(function () {
     let i = $(this).index();
-    $("#output").text(`${points[i]} `);
+    let print = $(points[i]).attr("value");
+    $("#output").text(`${print} `);
   });
 
   // show Thank You and hide Rating
-  $("form").submit(function () {
+  $("form").submit(function (e) {
+    e.preventDefault();
     $(".rating").hide();
     $(".success").show().animate({
       opacity: "1",
