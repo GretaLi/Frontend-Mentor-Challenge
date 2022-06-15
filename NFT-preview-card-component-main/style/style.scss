@@ -1,0 +1,135 @@
+@import url("https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600&display=swap");
+//color variables
+$softBlue: hsl(215, 51%, 70%);
+$cyan: hsl(178, 100%, 50%);
+$darkBlue-bg: hsl(217, 54%, 11%);
+$darkBlue-card: hsl(216, 50%, 16%);
+$darkblue-line: hsl(215, 32%, 27%);
+$white: hsl(0, 0%, 100%);
+
+//basic setting
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+html,
+body {
+  font-family: "Outfit", sans-serif;
+  background-color: $darkBlue-bg;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+img {
+  vertical-align: middle;
+}
+
+.shadow {
+  box-shadow: 0px 5px 20px rgba(8, 8, 36, 0.424);
+}
+
+.rounded {
+  border-radius: 20px;
+}
+
+//main//
+.card {
+  margin: auto;
+  padding: 18px;
+  width: 320px;
+  background: $darkBlue-card;
+  & > a {
+    display: block;
+    position: relative;
+  }
+
+  & > a::before {
+    position: absolute;
+    content: " ";
+    width: 100%;
+    height: 0%;
+    background: url(../images/icon-view.svg) center center, rgba($cyan, 0.3);
+    background-repeat: no-repeat;
+    border-radius: 10px;
+  }
+  & > a:hover::before {
+    height: 100%;
+    transition: height 0.5s 0.3s;
+  }
+  &-img {
+    z-index: 0;
+    max-width: 100%;
+    border-radius: 10px;
+  }
+  h1 a {
+    display: block;
+    margin: 20px 0 16px;
+    font-size: 24px;
+    font-weight: 600;
+    color: $white;
+    text-decoration: none;
+    &:hover {
+      color: $cyan;
+    }
+  }
+
+  p {
+    margin: 16px 0;
+    line-height: 1.5;
+    font-size: 18px;
+    color: $softBlue;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    img {
+      margin-right: 8px;
+      padding-bottom: 4px;
+    }
+    & > p {
+      font-size: 15px;
+    }
+    :first-child {
+      color: $cyan;
+    }
+    border-bottom: 1px solid $darkblue-line;
+  }
+  &-creator {
+    display: flex;
+    align-items: center;
+    img {
+      margin-right: 16px;
+      width: 30px;
+      height: 30px;
+      border: 1px solid $white;
+      border-radius: 100px;
+    }
+    a {
+      margin-left: 2px;
+      color: $white;
+      text-decoration: none;
+      &:hover {
+        color: $cyan;
+      }
+    }
+  }
+}
+
+//Footer//
+.attribution {
+  padding: 16px 0;
+  font-size: 11px;
+  text-align: center;
+  color: $white;
+}
+.attribution a {
+  color: $cyan;
+  text-decoration: none;
+}
