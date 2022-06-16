@@ -1,0 +1,150 @@
+@import url("https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@500;700;900&display=swap");
+//color variables
+$paleBlue: hsl(225, 100%, 94%);
+$brightBlue: hsl(245, 75%, 52%);
+$veryPaleBlue: hsl(225, 100%, 98%);
+$desaturatedBlue: hsl(224, 23%, 55%);
+$darkBlue: hsl(223, 47%, 23%);
+
+//basic setting
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  transition: all 0.3s;
+}
+
+html,
+body {
+  font-family: "Red Hat Display", sans-serif;
+  color: $darkBlue;
+  background: url(../images/pattern-background-mobile.svg), $paleBlue;
+  background-size: 100%;
+  background-repeat: no-repeat;
+  @media (min-width: 768px) {
+    background: url(../images/pattern-background-desktop.svg), $paleBlue;
+    background-size: 100%;
+    background-repeat: no-repeat;
+  }
+}
+
+img {
+  vertical-align: middle;
+}
+
+.shadow {
+  box-shadow: 0px 20px 25px rgba(darken($brightBlue, 5%), 0.2);
+}
+
+.rounded {
+  border-radius: 15px;
+}
+
+//main//
+.container {
+  min-height: 95vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px;
+}
+
+.card {
+  max-width: 450px;
+  background: #fff;
+  img {
+    width: 100%;
+    border-radius: 15px 15px 0 0;
+  }
+  &-txt {
+    padding: 36px;
+    text-align: center;
+    h1 {
+      margin: 16px;
+      font-size: 28px;
+      font-weight: 900;
+    }
+
+    p {
+      margin: 16px 16px 24px;
+      line-height: 1.5;
+      font-size: 16px;
+      color: $desaturatedBlue;
+    }
+    @media (max-width: 576px) {
+      padding: 24px 16px;
+    }
+  }
+
+  &-info {
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: $veryPaleBlue;
+    img {
+      width: 50px;
+    }
+    .plan {
+      margin-left: 18px;
+      margin-right: auto;
+    }
+    h2 {
+      margin: 0;
+      font-size: 18px;
+      font-weight: 900;
+    }
+    p {
+      text-align: left;
+      margin: 0;
+    }
+    a {
+      font-weight: 900;
+      color: $brightBlue;
+      @media (min-width: 768px) {
+        &:hover {
+          opacity: 0.7;
+          text-decoration: none;
+        }
+      }
+    }
+  }
+
+  .btn {
+    display: block;
+    padding: 14px 0;
+    margin: 28px 0 28px;
+    background-color: $brightBlue;
+    color: $veryPaleBlue;
+    text-decoration: none;
+    font-weight: 900;
+    border-radius: 10px;
+    @media (min-width: 768px) {
+      &:hover {
+        opacity: 0.7;
+        box-shadow: 0px 20px 30px rgba(darken($brightBlue, 5%), 0.4);
+      }
+    }
+  }
+  .cancel {
+    color: $desaturatedBlue;
+    font-weight: 900;
+    text-decoration: none;
+    @media (min-width: 768px) {
+      &:hover {
+        color: $darkBlue;
+      }
+    }
+  }
+}
+
+//Footer//
+.attribution {
+  padding: 16px 0;
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: $brightBlue;
+  text-decoration: none;
+}
