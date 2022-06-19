@@ -28,8 +28,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://your-solution-url.com)
-- Live Site URL: [Add live site URL here](https://your-live-site-url.com)
+- Solution URL: [Repository](https://github.com/GretaLi/Frontend-Mentor-Challenge/tree/main/3-column-preview-card-component-main)
+- Live Site URL: [3 column preview card component](https://gretali.github.io/Frontend-Mentor-Challenge/3-column-preview-card-component-main/)
 
 ## My process
 
