@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/base.css" />
+    <link rel="stylesheet" href="./style/destination.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <script src="./js/all.js" defer></script>
+    <title>Frontend Mentor | Space tourism website</title>
+  </head>
+  <body class="destination">
+    <header class="flex justify-content-between align-items-center">
+      <div class="logo flex">
+        <a href="index.html"
+          ><img src="./image/shared/logo.svg" alt="logo"
+        /></a>
+      </div>
+      <div class="deco-line"></div>
+      <nav>
+        <ul
+          id="navbar"
+          data-visible="false"
+          class="navbar underline-indicators flex justify-content-center"
+        >
+          <li>
+            <a class="fs-450 ff-sans-cond uppercase" href="index.html"
+              ><span class="fw-700">00</span>Home</a
+            >
+          </li>
+          <li class="active">
+            <a class="fs-450 ff-sans-cond uppercase" href="destination.html"
+              ><span class="fw-700">01</span>Destination</a
+            >
+          </li>
+          <li>
+            <a class="fs-450 ff-sans-cond uppercase" href="crew.html"
+              ><span class="fw-700">02</span>Crew</a
+            >
+          </li>
+          <li>
+            <a class="fs-450 ff-sans-cond uppercase" href="technology.html"
+              ><span class="fw-700">03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <button id="navbar-toggle" class="navbar-toggle" aria-controls="navbar">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
+    </header>
+    <main class="container">
+      <div class="content">
+        <h1 class="numbered-title fs-500 text-center">
+          <span class="fw-700">01</span>Pick your destination Moon
+        </h1>
+      </div>
+      <div
+        class="content flex flex-column justify-content-between align-items-center"
+      >
+        <div class="content-img">
+          <img src="./image/destination/image-moon.png" alt="Moon" />
+        </div>
+        <div>
+          <div class="tabs underline-indicators flex justify-content-center">
+            <button class="active fs-300 ff-sans-cond uppercase text-accent">
+              Moon
+            </button>
+            <button class="fs-300 ff-sans-cond uppercase text-accent">
+              Mars
+            </button>
+            <button class="fs-300 ff-sans-cond uppercase text-accent">
+              Europa
+            </button>
+            <button class="fs-300 ff-sans-cond uppercase text-accent">
+              Titan
+            </button>
+          </div>
+          <div class="content-txt text-center">
+            <h2 class="fs-800 ff-serif uppercase">Moon</h2>
+            <p class="fs-400 text-accent">
+              See our planet as you’ve never seen it before. A perfect relaxing
+              trip away to help regain perspective and come back refreshed.
+              While you’re there, take in some history by visiting the Luna 2
+              and Apollo 11 landing sites.
+            </p>
+            <div class="flex flex-column">
+              <p class="fs-200 uppercase text-accent">
+                Avg. distance<span class="block fs-550 ff-serif text-white"
+                  >384,400 km</span
+                >
+              </p>
+              <p class="fs-200 uppercase text-accent">
+                Est. travel time<span class="block fs-550 ff-serif text-white"
+                  >3 days</span
+                >
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

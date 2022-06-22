@@ -1,0 +1,46 @@
+body {
+  background: url(../image/home/background-home-mobile.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: bottom center;
+}
+
+.content {
+  min-height: 75vh;
+  padding-bottom: max(5rem, 10vh);
+}
+
+.content-txt {
+  max-width: 27.75rem;
+  padding: 1.5rem 0;
+}
+
+.content-txt span {
+  margin: 1rem 0;
+}
+
+@media (min-width: 768px) {
+  body {
+    background: url(../image/home/background-home-tablet.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .content-txt span {
+    margin: 1.5rem 0;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    background: url(../image/home/background-home-desktop.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .content-txt {
+    padding-bottom: 0;
+  }
+}

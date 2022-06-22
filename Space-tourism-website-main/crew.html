@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./style/base.css" />
+    <link rel="stylesheet" href="./style/crew.css" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+    <script src="./js/all.js" defer></script>
+    <title>Frontend Mentor | Space tourism website</title>
+  </head>
+  <body>
+    <header class="flex justify-content-between align-items-center">
+      <div class="logo flex">
+        <a href="index.html"
+          ><img src="./image/shared/logo.svg" alt="logo"
+        /></a>
+      </div>
+      <div class="deco-line"></div>
+      <nav>
+        <ul
+          id="navbar"
+          data-visible="false"
+          class="navbar underline-indicators flex justify-content-center"
+        >
+          <li>
+            <a class="fs-450 ff-sans-cond uppercase" href="index.html"
+              ><span class="fw-700">00</span>Home</a
+            >
+          </li>
+          <li>
+            <a class="fs-450 ff-sans-cond uppercase" href="destination.html"
+              ><span class="fw-700">01</span>Destination</a
+            >
+          </li>
+          <li class="active">
+            <a class="fs-450 ff-sans-cond uppercase" href="crew.html"
+              ><span class="fw-700">02</span>Crew</a
+            >
+          </li>
+          <li>
+            <a class="fs-450 ff-sans-cond uppercase" href="technology.html"
+              ><span class="fw-700">03</span>Technology</a
+            >
+          </li>
+        </ul>
+      </nav>
+      <button id="navbar-toggle" class="navbar-toggle" aria-controls="navbar">
+        <span class="sr-only" aria-expanded="false">Menu</span>
+      </button>
+    </header>
+    <main class="container">
+      <div class="content">
+        <h1 class="numbered-title fs-500 text-center">
+          <span class="fw-700">02</span>Meet your crew
+        </h1>
+      </div>
+
+      <div
+        class="content flex flex-column-reverse justify-content-between align-items-center"
+      >
+        <div class="content-txt flex flex-column-reverse">
+          <div>
+            <h3 class="fs-600 ff-serif uppercase">Commander</h3>
+            <h2 class="fs-700 ff-serif uppercase">Douglas Hurley</h2>
+            <p class="fs-400 text-accent">
+              Douglas Gerald Hurley is an American engineer, former Marine Corps
+              pilot and former NASA astronaut. He launched into space for the
+              third time as commander of Crew Dragon Demo-2.
+            </p>
+          </div>
+          <div class="dot-indicators flex justify-content-center">
+            <button aria-selected="true">
+              <span class="sr-only">Title</span>
+            </button>
+            <button aria-selected="false">
+              <span class="sr-only">Title</span>
+            </button>
+            <button aria-selected="false">
+              <span class="sr-only">Title</span>
+            </button>
+            <button aria-selected="false">
+              <span class="sr-only">Title</span>
+            </button>
+          </div>
+        </div>
+
+        <div class="content-img">
+          <img
+            src="./image/crew/image-douglas-hurley.png"
+            alt="image-douglas-hurley"
+          />
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

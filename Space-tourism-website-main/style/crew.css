@@ -1,0 +1,100 @@
+body {
+  background: url(../image/crew/background-crew-mobile.jpg) no-repeat;
+  background-size: cover;
+  background-position: top center;
+}
+
+.content {
+  --gap: 2rem;
+}
+
+.content-img {
+  border-bottom: 1px solid hsl(var(--crl-divider));
+}
+
+.content-img > img {
+  width: 47.2%;
+  margin: 0 auto;
+}
+
+.content-txt {
+  max-width: 48ch;
+  padding: 0 0 3.5rem;
+}
+
+.content-txt h3 {
+  opacity: 0.5;
+}
+.content-txt h2 {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+@media (min-width: 600px) {
+  body {
+    background: url(../image/crew/background-crew-tablet.jpg) no-repeat;
+    background-size: cover;
+    background-position: top center;
+  }
+
+  .content.flex {
+    --gap: 2.5rem;
+    flex-direction: column;
+    min-height: 79vh;
+  }
+
+  .content-img {
+    border-bottom: 0;
+  }
+
+  .content-img img {
+    min-width: 400px;
+  }
+
+  .content-txt {
+    max-width: 65ch;
+    padding: 0;
+    flex-direction: column;
+  }
+}
+
+@media (min-width: 992px) {
+  body {
+    background: url(../image/crew/background-crew-desktop.jpg) no-repeat;
+    background-size: cover;
+    background-position: center center;
+  }
+
+  .content.flex {
+    flex-direction: row;
+    /* min-height: 70vh; */
+  }
+
+  .content.flex > * {
+    width: 50%;
+  }
+
+  .container {
+    background: url(../image/crew/image-douglas-hurley.png) no-repeat;
+    background-size: contain;
+    background-position: 90% bottom;
+  }
+
+  .content-img img {
+    display: none;
+  }
+
+  .content-txt {
+    --gap: 7.5rem;
+    padding: 0 0 6rem;
+  }
+
+  .content-txt h2 {
+    margin-top: 1rem;
+    margin-bottom: 1.75rem;
+  }
+
+  .content-txt p {
+    max-width: 45ch;
+  }
+}
