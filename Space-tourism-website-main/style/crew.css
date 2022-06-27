@@ -12,7 +12,7 @@ body {
   border-bottom: 1px solid hsl(var(--crl-divider));
 }
 
-.content-img > img {
+.content-img > * {
   width: 47.2%;
   margin: 0 auto;
 }

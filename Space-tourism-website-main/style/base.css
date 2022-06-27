@@ -118,7 +118,8 @@ body {
 }
 
 img,
-picture {
+source[type="image/webp"] {
+  display: block;
   max-width: 100%;
 }
 
