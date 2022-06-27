@@ -120,7 +120,6 @@ body {
 img,
 picture {
   max-width: 100%;
-  display: block;
 }
 
 input,
@@ -193,6 +192,18 @@ a {
 
 .flow > *:where(:not(:first-child)) {
   margin-top: var(--flow-space, 2.5rem);
+}
+
+.flow--space-m {
+  --flow-space: 2rem;
+}
+
+.flow--space-s {
+  --flow-space: 1rem;
+}
+
+.flow--space-xs {
+  --flow-space: 0.5rem;
 }
 
 .text-center {
@@ -361,7 +372,7 @@ a {
 }
 
 /* Header */
-header {
+.primary-header {
   padding: 1.5rem;
 }
 
@@ -371,7 +382,7 @@ header {
 }
 
 @media (min-width: 600px) {
-  header {
+  .primary-header {
     padding: 0 0 2.5rem 2.5rem;
   }
 
@@ -382,7 +393,7 @@ header {
 }
 
 @media (min-width: 992px) {
-  header {
+  .primary-header {
     --gap: 0rem;
     padding: 2.5rem 0 2.5rem 3.438rem;
   }

@@ -2,7 +2,7 @@ body {
   background: url(../image/destination/background-destination-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: bottom center;
+  background-position: top center;
 }
 
 .content-img {

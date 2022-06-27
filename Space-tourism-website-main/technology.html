@@ -15,7 +15,9 @@
     <title>Frontend Mentor | Space tourism website</title>
   </head>
   <body>
-    <header class="flex justify-content-between align-items-center">
+    <header
+      class="primary-header flex justify-content-between align-items-center"
+    >
       <div class="logo flex">
         <a href="index.html"
           ><img src="./image/shared/logo.svg" alt="logo"
@@ -55,7 +57,7 @@
       </button>
     </header>
 
-    <main class="container">
+    <main id="main" class="container">
       <div class="content">
         <h1 class="numbered-title fs-500 text-center">
           <span class="fw-700">03</span>Space launch 101
@@ -64,23 +66,145 @@
       <div
         class="content flex flex-column justify-content-between align-items-center"
       >
-        <div class="numbered-indicators flex align-items-center">
-          <button aria-selected="true" class="ff-serif text-white">1</button>
-          <button aria-selected="false" class="ff-serif text-white">2</button>
-          <button aria-selected="false" class="ff-serif text-white">3</button>
+        <!-- Technology Image -->
+        <picture id="vehicle-image" class="content-img">
+          <img
+            class="img-landscape"
+            src="./image/technology/image-launch-vehicle-landscape.jpg"
+            alt="launch vehicle"
+          />
+          <img
+            class="img-portrait"
+            src="./image/technology/image-launch-vehicle-portrait.jpg"
+            alt="launch vehicle"
+          />
+        </picture>
+
+        <picture hidden id="spaceport-image" class="content-img">
+          <img
+            class="img-landscape"
+            src="./image/technology/image-spaceport-landscape.jpg"
+            alt="launch vehicle"
+          />
+          <img
+            class="img-portrait"
+            src="./image/technology/image-spaceport-portrait.jpg"
+            alt="launch vehicle"
+          />
+        </picture>
+
+        <picture hidden id="capsule-image" class="content-img">
+          <img
+            class="img-landscape"
+            src="./image/technology/image-space-capsule-landscape.jpg"
+            alt="launch vehicle"
+          />
+          <img
+            class="img-portrait"
+            src="./image/technology/image-space-capsule-portrait.jpg"
+            alt="launch vehicle"
+          />
+        </picture>
+
+        <!-- Content & Tab List -->
+        <div class="flex flex-column">
+          <!-- Tab List -->
+          <div
+            role="tablist"
+            aria-label="technology list"
+            class="numbered-indicators flex align-items-center"
+          >
+            <button
+              role="tab"
+              aria-selected="true"
+              aria-controls="vehicle-tab"
+              data-image="vehicle-image"
+              tabindex="0"
+              class="ff-serif text-white"
+            >
+              <span class="sr-only">vehicle</span>
+              1
+            </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              aria-controls="spaceport-tab"
+              data-image="spaceport-image"
+              tabindex="-1"
+              class="ff-serif text-white"
+            >
+              <span class="sr-only">spaceport</span>
+              2
+            </button>
+            <button
+              role="tab"
+              aria-selected="false"
+              aria-controls="capsule-tab"
+              data-image="capsule-image"
+              tabindex="-1"
+              class="ff-serif text-white"
+            >
+              <span class="sr-only">capsule</span>
+              3
+            </button>
+          </div>
+
+          <!-- Vehicle Content -->
+          <article
+            role="tabpanel"
+            id="vehicle-tab"
+            tabindex="0"
+            class="content-txt"
+          >
+            <h3 class="fs-300 text-accent uppercase">The terminology...</h3>
+            <h2 class="fs-700 ff-serif uppercase">Launch vehicle</h2>
+            <p class="fs-400 text-accent">
+              A launch vehicle or carrier rocket is a rocket-propelled vehicle
+              used to carry a payload from Earth's surface to space, usually to
+              Earth orbit or beyond. Our WEB-X carrier rocket is the most
+              powerful in operation. Standing 150 metres tall, it's quite an
+              awe-inspiring sight on the launch pad!
+            </p>
+          </article>
+
+          <!-- Spaceport Content -->
+          <article
+            hidden
+            role="tabpanel"
+            id="spaceport-tab"
+            tabindex="-1"
+            class="content-txt"
+          >
+            <h3 class="fs-300 text-accent uppercase">The terminology...</h3>
+            <h2 class="fs-700 ff-serif uppercase">Spaceport</h2>
+            <p class="fs-400 text-accent">
+              A spaceport or cosmodrome is a site for launching (or receiving)
+              spacecraft, by analogy to the seaport for ships or airport for
+              aircraft. Based in the famous Cape Canaveral, our spaceport is
+              ideally situated to take advantage of the Earth’s rotation for
+              launch.
+            </p>
+          </article>
+
+          <!-- Space capsule Content -->
+          <article
+            hidden
+            role="tabpanel"
+            id="capsule-tab"
+            tabindex="-1"
+            class="content-txt"
+          >
+            <h3 class="fs-300 text-accent uppercase">The terminology...</h3>
+            <h2 class="fs-700 ff-serif uppercase">Space capsule</h2>
+            <p class="fs-400 text-accent">
+              A space capsule is an often-crewed spacecraft that uses a
+              blunt-body reentry capsule to reenter the Earth's atmosphere
+              without wings. Our capsule is where you'll spend your time during
+              the flight. It includes a space gym, cinema, and plenty of other
+              activities to keep you entertained.
+            </p>
+          </article>
         </div>
-        <div class="content-txt">
-          <h3 class="fs-300 text-accent uppercase">The terminology...</h3>
-          <h2 class="fs-700 ff-serif uppercase">Launch vehicle</h2>
-          <p class="fs-400 text-accent">
-            A launch vehicle or carrier rocket is a rocket-propelled vehicle
-            used to carry a payload from Earth's surface to space, usually to
-            Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful
-            in operation. Standing 150 metres tall, it's quite an awe-inspiring
-            sight on the launch pad!
-          </p>
-        </div>
-        <div class="content-img"></div>
       </div>
     </main>
   </body>
