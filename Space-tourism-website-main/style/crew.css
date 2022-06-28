@@ -1,5 +1,9 @@
 body {
-  background: url(../image/crew/background-crew-mobile.jpg) no-repeat;
+  background: linear-gradient(
+      hsl(var(--crl-dark) / 0.5),
+      hsl(var(--crl-dark) / 0.5)
+    ),
+    url(../image/crew/background-crew-mobile.jpg) no-repeat;
   background-size: cover;
   background-position: top center;
 }
@@ -33,7 +37,11 @@ body {
 
 @media (min-width: 600px) {
   body {
-    background: url(../image/crew/background-crew-tablet.jpg) no-repeat;
+    background: linear-gradient(
+        hsl(var(--crl-dark) / 0.5),
+        hsl(var(--crl-dark) / 0.5)
+      ),
+      url(../image/crew/background-crew-tablet.jpg) no-repeat;
     background-size: cover;
     background-position: top center;
   }
@@ -64,7 +72,11 @@ body {
 
 @media (min-width: 992px) {
   body {
-    background: url(../image/crew/background-crew-desktop.jpg) no-repeat;
+    background: linear-gradient(
+        hsl(var(--crl-dark) / 0.5),
+        hsl(var(--crl-dark) / 0.5)
+      ),
+      url(../image/crew/background-crew-desktop.jpg) no-repeat;
     background-size: cover;
     background-position: center center;
   }

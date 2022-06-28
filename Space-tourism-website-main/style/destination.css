@@ -1,6 +1,6 @@
 body {
-  background: url(../image/destination/background-destination-mobile.jpg);
-  background-repeat: no-repeat;
+  background: url(../image/destination/background-destination-mobile.jpg)
+    no-repeat;
   background-size: cover;
   background-position: top center;
 }
@@ -26,8 +26,8 @@ body {
 
 @media (min-width: 600px) {
   body {
-    background: url(../image/destination/background-destination-mobile.jpg);
-    background-repeat: no-repeat;
+    background: url(../image/destination/background-destination-tablet.jpg)
+      no-repeat;
     background-size: cover;
     background-position: center center;
   }
@@ -64,8 +64,8 @@ body {
 
 @media (min-width: 992px) {
   body {
-    background: url(../image/destination/background-destination-desktop.jpg);
-    background-repeat: no-repeat;
+    background: url(../image/destination/background-destination-desktop.jpg)
+      no-repeat;
     background-size: cover;
     background-position: center center;
   }

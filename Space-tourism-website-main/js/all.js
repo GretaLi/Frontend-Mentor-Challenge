@@ -92,9 +92,9 @@ function changeTabPanel(e) {
 
 // refactoring
 function hideContent(parent, content) {
-  parent
-    .querySelectorAll(content)
-    .forEach((item) => item.setAttribute("hidden", true));
+  parent.querySelectorAll(content).forEach((item) => {
+    item.setAttribute("hidden", true);
+  });
 }
 
 function showContent(parent, content) {
