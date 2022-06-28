@@ -221,18 +221,24 @@ a {
   padding: 1rem 0;
   text-align: center;
   line-height: 1rem;
-  transition: all 0.3s ease-in-out;
   cursor: pointer;
 }
 
 .btn img {
   vertical-align: bottom;
   margin-right: 0.5rem;
+  transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
   background: hsl(158, 36%, 28%);
   box-shadow: 0px 15px 30px hsla(31, 11%, 37%, 0.262);
+  transform: translate(1px, 1px);
+}
+
+.btn:active {
+  transform: translate(2px, 2px);
+  transition: none;
 }
 
 /*--------------------*/
