@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Product preview card component</title>
+    <link rel="stylesheet" href="./style/style.css" />
+  </head>
+  <body>
+    <main class="container flex justify-content-center align-items-center">
+      <div class="card bg-white flex flex-column rounded shadow">
+        <picture class="card-img">
+          <source
+            loading="lazy"
+            media="(min-width: 768px)"
+            srcset="./images/image-product-desktop.jpg"
+          />
+          <img
+            loading="lazy"
+            src="./images/image-product-mobile.jpg"
+            alt="Gabrielle perfume"
+          />
+        </picture>
+        <div class="card-txt flow">
+          <header class="flow flow--space-s">
+            <h2 class="fs-400 uppercase letter-spacing-1">perfume</h2>
+            <h3 class="fs-600 ff-serif text-dark">
+              Gabrielle Essence Eau De Parfum
+            </h3>
+          </header>
+          <p>
+            A floral, solar and voluptuous interpretation composed by Olivier
+            Polge, Perfumer-Creator for the House of CHANEL.
+          </p>
+          <div class="card-price flex align-items-center">
+            <p class="fs-500 ff-serif text-accent">$149.99</p>
+            <p class="fs-300 line-through">$169.99</p>
+          </div>
+          <a class="btn fw-700 bg-accent text-white rounded">
+            <img src="./images/icon-cart.svg" alt="icon-cart" />
+            Add to Cart</a
+          >
+        </div>
+      </div>
+    </main>
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by <a href="https://github.com/GretaLi">Greta Li</a>.
+      </div>
+    </footer>
+  </body>
+</html>

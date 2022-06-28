@@ -1,0 +1,281 @@
+/* Google Font */
+@import url("https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Montserrat:wght@500;700&display=swap");
+/*--------------------*/
+/* Custom properties  */
+/*--------------------*/
+
+:root {
+  /* primary color*/
+  --crl-accent: 158, 36%, 37%;
+  --crl-cream: 30, 38%, 92%;
+  /* neutral color*/
+  --crl-dark: 212, 21%, 14%;
+  --crl-grayish: 228, 12%, 48%;
+  --crl-white: 0, 0%, 100%;
+  /* typography */
+  --ff-sans: "Montserrat", sans-serif;
+  --ff-serif: "Fraunces", serif;
+
+  --fs-600: 2rem;
+  --fs-500: 1.75rem;
+  --fs-400: 0.875rem;
+  --fs-300: 0.75rem;
+}
+
+/*--------------------*/
+/* Reset              */
+/*--------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+p,
+figure,
+picture {
+  margin: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  line-height: 1;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+li {
+  list-style: none;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  background-color: hsl(var(--crl-cream));
+  color: hsl(var(--crl-grayish));
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: hsl(var(--crl-accent));
+  color: hsl(var(--crl-white));
+}
+
+img,
+picture {
+  vertical-align: middle;
+  display: inline-block;
+  max-width: 100%;
+}
+
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+a {
+  text-decoration: none;
+}
+
+/*--------------------*/
+/* Utility classes    */
+/*--------------------*/
+
+.flex {
+  display: flex;
+  gap: var(--gap, 1rem);
+}
+
+.flex-column {
+  flex-direction: column;
+}
+
+.justify-content-center {
+  justify-content: center;
+}
+
+.align-items-center {
+  align-items: center;
+}
+
+.container {
+  padding: 2rem 1.5rem;
+  margin-inline: auto;
+  max-width: 90rem;
+  min-height: 95vh;
+}
+
+.flow > *:where(:not(:first-child)) {
+  margin-top: var(--flow-space, 1.5rem);
+}
+
+.flow--space-s {
+  --flow-space: 1rem;
+}
+
+.letter-spacing-1 {
+  letter-spacing: 2px;
+}
+
+/* colors */
+.bg-cream {
+  background: hsl(var(--crl-cream));
+}
+
+.bg-accent {
+  background: hsl(var(--crl-accent));
+}
+
+.bg-white {
+  background: hsl(var(--crl-white));
+}
+
+.text-accent {
+  color: hsl(var(--crl-accent));
+}
+
+.text-dark {
+  color: hsl(var(--crl-dark));
+}
+
+.text-white {
+  color: hsl(var(--crl-white));
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+.shadow {
+  box-shadow: 0px 15px 40px hsla(32, 36%, 70%, 0.45);
+}
+/* typography */
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.ff-serif {
+  font-family: var(--ff-serif);
+}
+.ff-sans {
+  font-family: var(--ff-sans);
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.line-through {
+  text-decoration: line-through;
+}
+
+/*--------------------*/
+/* Components         */
+/*--------------------*/
+
+.btn {
+  display: block;
+  padding: 1rem 0;
+  text-align: center;
+  line-height: 1rem;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.btn img {
+  vertical-align: bottom;
+  margin-right: 0.5rem;
+}
+
+.btn:hover {
+  background: hsl(158, 36%, 28%);
+  box-shadow: 0px 15px 30px hsla(31, 11%, 37%, 0.262);
+}
+
+/*--------------------*/
+/* Content layout     */
+/*--------------------*/
+
+.card {
+  --gap: 0;
+  overflow: hidden;
+  max-width: 30rem;
+}
+
+.card-txt {
+  padding: 1.5rem;
+}
+
+.card-price {
+  --gap: 2rem;
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: hsl(var(--crl-accent));
+}
+
+@media (min-width: 768px) {
+  .card {
+    flex-direction: row;
+    max-width: 40rem;
+  }
+  .card > * {
+    width: 50%;
+  }
+  .card-txt {
+    --flow-space: 2rem;
+    margin: auto;
+    padding: 2rem;
+  }
+
+  .card-txt header {
+    --flow-space: 1.5rem;
+  }
+}
