@@ -227,7 +227,6 @@ a {
 .btn img {
   vertical-align: bottom;
   margin-right: 0.5rem;
-  transition: all 0.3s ease-in-out;
 }
 
 .btn:hover {
@@ -238,7 +237,6 @@ a {
 
 .btn:active {
   transform: translate(2px, 2px);
-  transition: none;
 }
 
 /*--------------------*/
