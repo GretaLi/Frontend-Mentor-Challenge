@@ -108,7 +108,6 @@ body {
   color: hsl(var(--crl-white));
   line-height: 1.5;
   min-height: 100vh;
-
   overflow-x: hidden;
 }
 
@@ -421,8 +420,12 @@ a {
 /* Navigation */
 .navbar {
   --gap: 3rem;
-  --underline-gap: 2.25rem;
+  --underline-gap: 0rem;
   background-color: hsl(var(--crl-dark) / 0.95);
+}
+
+.navbar a {
+  padding-block: 2.25rem;
 }
 
 .navbar span {
@@ -449,6 +452,10 @@ a {
     padding-top: max(5rem, 17vh);
     transform: translateX(100%);
     transition: transform 0.7s ease-in-out;
+  }
+
+  .navbar a {
+    padding-block: 0;
   }
 
   .navbar[data-visible="true"] {
