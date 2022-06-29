@@ -1,8 +1,9 @@
-body {
+body .bg {
   background: url(../image/home/background-home-mobile.jpg);
   background-repeat: no-repeat;
   background-size: cover;
   background-position: bottom center;
+  height: 100vh;
 }
 
 .content {
@@ -20,7 +21,7 @@ body {
 }
 
 @media (min-width: 768px) {
-  body {
+  body .bg {
     background: url(../image/home/background-home-tablet.jpg);
     background-repeat: no-repeat;
     background-size: cover;
@@ -33,7 +34,7 @@ body {
 }
 
 @media (min-width: 992px) {
-  body {
+  body .bg {
     background: url(../image/home/background-home-desktop.jpg);
     background-repeat: no-repeat;
     background-size: cover;

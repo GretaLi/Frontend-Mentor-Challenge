@@ -1,8 +1,9 @@
-body {
+body .bg {
   background: url(../image/destination/background-destination-mobile.jpg)
     no-repeat;
   background-size: cover;
   background-position: top center;
+  height: 100vh;
 }
 
 .content-img {
@@ -25,7 +26,7 @@ body {
 }
 
 @media (min-width: 600px) {
-  body {
+  body .bg {
     background: url(../image/destination/background-destination-tablet.jpg)
       no-repeat;
     background-size: cover;
@@ -63,7 +64,7 @@ body {
 }
 
 @media (min-width: 992px) {
-  body {
+  body .bg {
     background: url(../image/destination/background-destination-desktop.jpg)
       no-repeat;
     background-size: cover;

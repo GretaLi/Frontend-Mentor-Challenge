@@ -1,8 +1,9 @@
-body {
+body .bg {
   background: url(../image/technology/background-technology-mobile.jpg)
     no-repeat;
   background-size: cover;
   background-position: top center;
+  height: 100vh;
 }
 
 .content {
@@ -27,7 +28,7 @@ body {
 }
 
 @media (min-width: 600px) {
-  body {
+  body .bg {
     background: url(../image/technology/background-technology-tablet.jpg)
       no-repeat;
     background-size: cover;
@@ -58,7 +59,7 @@ body {
 }
 
 @media (min-width: 992px) {
-  body {
+  body .bg {
     background: url(../image/technology/background-technology-desktop.jpg)
       no-repeat;
     background-size: cover;
