@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Intro section with dropdown navigation</title>
+    <link rel="stylesheet" href="./style/style.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" defer></script>
+    <script src="./js/all.js" defer></script>
+  </head>
+  <body>
+    <header class="primary-header flex align-items-center bg-white">
+      <h1 class="logo">
+        <a href="index.html"><img src="./images/logo.svg" alt="Snap logo" /></a>
+      </h1>
+      <nav>
+        <ul
+          id="navbar"
+          data-visible="false"
+          class="navbar flex align-items-center"
+        >
+          <li style="position: relative">
+            <a
+              href="#"
+              aria-controls="dropdown-menu--1"
+              class="dropdown-menu-toggle"
+              aria-expanded="false"
+              >Features</a
+            >
+            <ul
+              id="dropdown-menu--1"
+              data-visible="false"
+              class="dropdown-menu dropdown-menu--1 bg-white"
+            >
+              <li>
+                <a href="#">
+                  <img src="./images/icon-todo.svg" alt="icon-todo" />
+                  Todo List</a
+                >
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-calendar.svg" alt="icon-calendar" />
+                  Calendar</a
+                >
+              </li>
+              <li>
+                <a href="#">
+                  <img src="./images/icon-reminders.svg" alt="icon-reminders" />
+                  Reminders</a
+                >
+              </li>
+              <li>
+                <a href="#" class="dropdown-item">
+                  <img src="./images/icon-planning.svg" alt="icon-planning" />
+                  Planing</a
+                >
+              </li>
+            </ul>
+          </li>
+          <li style="position: relative">
+            <a
+              href="#"
+              aria-controls="dropdown-menu--2"
+              class="dropdown-menu-toggle"
+              aria-expanded="false"
+              >Company</a
+            >
+            <ul
+              id="dropdown-menu--2"
+              data-visible="false"
+              class="dropdown-menu dropdown-menu--2 bg-white"
+            >
+              <li><a href="#">History</a></li>
+              <li><a href="#">Our Team</a></li>
+              <li><a href="#">Blog</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Careers</a></li>
+          <li><a href="#">About</a></li>
+          <li class="navbar-member flex flex-column text-center">
+            <a href="#">Login</a>
+            <a class="btn" href="#">Register</a>
+          </li>
+        </ul>
+      </nav>
+      <button
+        aria-expanded="false"
+        aria-controls="navbar"
+        class="navbar-toggle"
+      >
+        <span class="sr-only">Menu</span>
+      </button>
+    </header>
+    <main class="container">
+      <div class="content flex flex-column align-items-center">
+        <picture class="content-img">
+          <source
+            loading="lazy"
+            media="(min-width: 992px)"
+            srcset="./images/image-hero-desktop.png"
+          />
+          <img
+            loading="lazy"
+            src="./images/image-hero-mobile.png"
+            alt="hero image"
+          />
+        </picture>
+        <div class="content-txt flow text-center">
+          <h2 class="fs-500 fw-700 text-primary">Make remote work</h2>
+          <p class="fs-400">
+            Get your team in sync, no matter your location. Streamline
+            processes, create team rituals, and watch productivity soar.
+          </p>
+          <a href="#" class="btn btn-primary">Learn more</a>
+          <div
+            class="content-txt--client flex justify-content-between align-items-center"
+          >
+            <img src="./images/client-databiz.svg" alt="client-databiz" />
+            <img src="./images/client-audiophile.svg" alt="client-audiophile" />
+            <img src="./images/client-meet.svg" alt="client-meet" />
+            <img src="./images/client-maker.svg" alt="client-maker" />
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a
+          class="fw-700"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a class="fw-700" href="https://github.com/GretaLi">Greta Li</a>.
+      </div>
+    </footer>
+  </body>
+</html>
