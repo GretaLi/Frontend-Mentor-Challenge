@@ -14,7 +14,7 @@ navToggle.addEventListener("click", function (e) {
   }
 });
 
-// Dropdown Menu
+// Dropdown Menu | Solution - 1
 const toggles = document.querySelectorAll(".dropdown-menu-toggle");
 const menus = document.querySelectorAll(".dropdown-menu");
 
@@ -59,3 +59,25 @@ function dataVisible_false(content) {
 function ariaExpanded_false(button) {
   button.setAttribute("aria-expanded", false);
 }
+
+// Dropdown Menu | Solution - 2
+// Use delegate to decrease event listener for more efficient solution
+//
+
+// Setp 0. change dropdown menu's attribute from "data-visible=false" to "data-hidden=true"
+
+// Step 1. get parent element
+document.getElementById("navbar").addEventListener("click", (event) => {
+  // Step 2. if the target is dropdown menu toggle
+  if (event.target.className === "dropdown-menu-toggle") {
+    // Step 3.
+    let targetToggle = event.target;
+    let menuId = targetToggle.getAttribute("aria-controls");
+    let menu = document.getElementById(menuId);
+    targetToggle.setAttribute(
+      "aria-expanded",
+      targetToggle.getAttribute("aria-expanded") == "false" ? "true" : false
+    );
+    menu.toggleAttribute("data-hidden");
+  }
+});

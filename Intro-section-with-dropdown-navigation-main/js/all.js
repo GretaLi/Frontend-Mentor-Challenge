@@ -16,16 +16,28 @@ $(document).ready(function () {
   });
 
   // Navbar Dropdown menu
-  $(".dropdown-menu-toggle").click(function () {
-    let menu = $(this).attr("aria-controls");
-    let menuVisible = $(`#${menu}`).attr("data-visible");
-    if (menuVisible === "false") {
-      $(this).attr("aria-expanded", true);
-      $(`#${menu}`).slideDown().attr("data-visible", true);
-    } else {
-      $(this).attr("aria-expanded", false);
-      $(`#${menu}`).slideUp().attr("data-visible", false);
-    }
+  //   $(".dropdown-menu-toggle").click(function () {
+  //     let menu = $(this).attr("aria-controls");
+  //     let menuVisible = $(`#${menu}`).attr("data-visible");
+  //     if (menuVisible === "false") {
+  //       $(this).attr("aria-expanded", true);
+  //       $(`#${menu}`).slideDown().attr("data-visible", true);
+  //     } else {
+  //       $(this).attr("aria-expanded", false);
+  //       $(`#${menu}`).slideUp().attr("data-visible", false);
+  //     }
+  //   });
+
+  // [Update] Navbar Dropdown Menu - using delegate to decrease event listener for more efficient solution
+
+  $("#navbar").delegate(".dropdown-menu-toggle", "click", function (event) {
+    event.stopPropagation();
+    let targetMenu = $(this).attr("aria-controls");
+    $(this).attr(
+      "aria-expanded",
+      $(this).attr("aria-expanded") == "false" ? "true" : "false"
+    );
+    $(`#${targetMenu}`).slideToggle();
   });
 });
 
@@ -33,11 +45,10 @@ $(document).ready(function () {
 // When click on window, dropdown menus close.
 window.onclick = function (e) {
   if (!e.target.matches(".dropdown-menu-toggle")) {
-    console.log(!e.target.matches(".dropdown-menu"));
     let dropdownMenus = document.querySelectorAll(".dropdown-menu");
-    dropdownMenus.forEach((dropdown) => {
-      dropdown.setAttribute("data-visible", false);
-      dropdown.style.display = "none";
+    dropdownMenus.forEach((menu) => {
+      menu.style.display = "none";
+      console.log(menu);
     });
 
     let dropdownToggles = document.querySelectorAll(".dropdown-menu-toggle");

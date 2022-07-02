@@ -278,7 +278,7 @@ a:hover {
   color: hsl(var(--crl-primary));
 }
 
-.dropdown-menu[data-visible="false"] {
+.dropdown-menu {
   display: none;
 }
 
