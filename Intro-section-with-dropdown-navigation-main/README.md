@@ -46,6 +46,52 @@ Users should be able to:
 
 ### What I learned
 
+**[Update] Dropdown Menu - Pure JS**
+
+Proud of myself that I finally figured out how to creat this by only JS. :)
+
+My solution as below:
+
+```js
+// Navbar Dropdown menu
+const toggles = document.querySelectorAll(".dropdown-menu-toggle");
+const menus = document.querySelectorAll(".dropdown-menu");
+
+toggles.forEach((toggle) => {
+  toggle.addEventListener("click", dropdown);
+});
+
+function dropdown(e) {
+  let targetToggle = e.target.getAttribute("aria-controls");
+  let targetMenu = document.querySelector([`#${targetToggle}`]);
+  let menuVisible = targetMenu.getAttribute("data-visible");
+
+  if (menuVisible === "false") {
+    targetMenu.setAttribute("data-visible", true);
+    e.target.setAttribute("aria-expanded", true);
+  } else {
+    targetMenu.setAttribute("data-visible", false);
+    e.target.setAttribute("aria-expanded", false);
+  }
+}
+
+// When click on window, dropdown menus close.
+window.onclick = function (e) {
+  if (!e.target.matches(".dropdown-menu-toggle")) {
+    menus.forEach((menu) => {
+      menu.setAttribute("data-visible", false);
+    });
+    toggles.forEach((toggle) => {
+      toggle.setAttribute("aria-expanded", false);
+    });
+  }
+};
+```
+
+In the end, I found out that I kept repeating attributes setting true / false. So I refactory my code make `setAttribute` as function.
+
+To see final solution please go [here](https://github.com/GretaLi/Frontend-Mentor-Challenge/blob/main/Intro-section-with-dropdown-navigation-main/js/vanilla.js)
+
 **Dropdown Menu - jQuery & JS**
 
 ```js
