@@ -140,7 +140,7 @@ window.onclick = function (e) {
 };
 ```
 
-In the end, I found out that I kept repeating attributes setting true / false. So I refactory my code make `setAttribute` as function.
+In the end, I found out that I kept repeating attributes setting true / false. So I refactor my code and make `setAttribute` as function.
 
 To see final solution please go [here](https://github.com/GretaLi/Frontend-Mentor-Challenge/blob/main/Intro-section-with-dropdown-navigation-main/js/vanilla.js)
 
