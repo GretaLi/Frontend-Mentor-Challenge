@@ -13,6 +13,7 @@ This is a solution to the [Intro section with dropdown navigation challenge on F
   - [What I learned](#what-i-learned)
   - [Useful resources](#useful-resources)
 - [Author](#author)
+- [Acknowledgments](#acknowledgments)
 
 ## Overview
 
@@ -45,6 +46,57 @@ Users should be able to:
 - [jQuery](https://jquery.com/) - JS library
 
 ### What I learned
+
+**[Update] I learned how to toggle true or false without using if statement.**
+
+```js
+$(this).attr(
+  "aria-expanded",
+  $(this).attr("aria-expanded") == "false" ? "true" : "false"
+);
+```
+
+**[Update] I learned how to use Event delegation to decrease event listener for more efficient solution**
+
+_Pure JS_
+
+```js
+// Dropdown Menu - JS / Event Delegation
+
+// Setp 0. change dropdown menu's attribute from "data-visible=false" to "data-hidden=true"
+
+// Step 1. get parent element
+document.getElementById("navbar").addEventListener("click", (event) => {
+  // Step 2. if the target is dropdown menu toggle
+  if (event.target.className === "dropdown-menu-toggle") {
+    // Step 3.
+    let targetToggle = event.target;
+    let menuId = targetToggle.getAttribute("aria-controls");
+    let menu = document.getElementById(menuId);
+    targetToggle.setAttribute(
+      "aria-expanded",
+      targetToggle.getAttribute("aria-expanded") == "false" ? "true" : false
+    );
+    menu.toggleAttribute("data-hidden");
+  }
+});
+```
+
+_jQuery_
+
+```js
+// Dropdown Menu - jQuery / Event Delegation
+
+$("#navbar").delegate(".dropdown-menu-toggle", "click", function (event) {
+  event.stopPropagation();
+  let targetMenu = $(this).attr("aria-controls");
+  $(this).attr(
+    "aria-expanded",
+    $(this).attr("aria-expanded") == "false" ? "true" : "false"
+  );
+  $(`#${targetMenu}`).slideToggle();
+});
+```
 
 **[Update] Dropdown Menu - Pure JS**
 
@@ -164,7 +216,15 @@ window.onclick = function (e) {
 
 - [Click window](https://www.w3schools.com/howto/howto_css_dropdown_navbar.asp) - This resource helped me to close dropdown menu when click on window.
 
+- [Event Delegation](https://dmitripavlutin.com/javascript-event-delegation/) - Use Event delegation to decrease event listener for more efficient solution.
+
+- [Toggle True or False](https://stackoverflow.com/questions/12551330/jquery-toggle-true-or-false-on-data-filter)
+
 ## Author
 
 - Website - [Greta Li](https://github.com/GretaLi)
 - Frontend Mentor - [@Greta Li](https://www.frontendmentor.io/profile/GretaLi)
+
+## Acknowledgments
+
+Thanks to [Ede](https://www.frontendmentor.io/solutions/intro-section-with-dropdown-navigation-css-javascript-jquery-uOLqP-kfVy#comment-62bec72e658d9669ffceee9e), he gave me some useful suggestion and inspired me to use `Event Delegation` and improve my code. :)
