@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Crowdfunding product page</title>
+    <link rel="stylesheet" href="./style/reset.css" />
+    <link rel="stylesheet" href="./style/style.css" />
+    <link
+      rel="stylesheet"
+      href="https://github.hubspot.com/odometer/themes/odometer-theme-minimal.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.2.3/animate.min.css"
+    />
+    <script src="https://code.jquery.com/jquery-3.6.0.js" defer></script>
+    <script
+      src="https://github.hubspot.com/odometer/odometer.js"
+      defer
+    ></script>
+    <script src="./app/app.js" defer></script>
+  </head>
+  <body>
+    <header id="primaryHeader" class="primary-header">
+      <nav class="flex jcsb aic">
+        <div class="logo">
+          <a href="#"
+            ><img src="./images/logo.svg" alt="the crowdfound logo"
+          /></a>
+        </div>
+        <!-- Navigation -->
+        <ul id="navbar" class="navbar" data-hidden>
+          <li><a href="#" class="fw-500 text-dark">About</a></li>
+          <li><a href="#prodDetails" class="fw-500 text-dark">Discover</a></li>
+          <li><a href="#" class="fw-500 text-dark">Get Started</a></li>
+        </ul>
+        <button
+          id="navbarToggle"
+          class="navbar-toggle"
+          aria-controls="navbar"
+          aria-expanded="false"
+        >
+          <span class="sr-only">Menu</span>
+        </button>
+      </nav>
+      <div class="hero-img"></div>
+    </header>
+
+    <main class="container">
+      <!-- Product section start -->
+      <section class="prod">
+        <!-- Product Summary -->
+        <div
+          class="prod-summary flow flow--space-m bg-white rounded text-center"
+        >
+          <img
+            class="prod-summary--logo"
+            src="./images/logo-mastercraft.svg"
+            alt="logo-mastercraft"
+          />
+          <h1 class="fs-600 fw-700 text-dark">
+            Mastercraft Bamboo Monitor Riser
+          </h1>
+          <p>
+            A beautiful & handcrafted monitor stand to reduce neck and eye
+            strain.
+          </p>
+          <div class="flex jcsb aic">
+            <a id="backBtn" href="#" class="btn">Back this project</a>
+            <div class="prod-summary--bookmark flex aic">
+              <button id="bookmarkBtn" data-bookmark="false"></button>
+              <span class="fw-700">Bookmark</span>
+            </div>
+          </div>
+        </div>
+        <!-- Product Data -->
+        <div id="prodData" class="prod-data flow bg-white rounded text-center">
+          <div class="flex flex-column aic">
+            <p>
+              <span
+                id="prod-data--amount"
+                data-amount="89914"
+                class="odometer_amount animated fadeIn block fs-700 fw-700 text-dark"
+                >$89,914</span
+              >
+              of $100,000 backed
+            </p>
+            <div class="divider"></div>
+            <p>
+              <span
+                id="prod-data--backers"
+                class="odometer_backer animated block fs-700 fw-700 text-dark"
+                >5,007</span
+              >
+              total backers
+            </p>
+            <div class="divider"></div>
+            <p>
+              <span id="prod-data--days" class="block fs-700 fw-700 text-dark"
+                >56</span
+              >days left
+            </p>
+          </div>
+          <div class="prod-data--progressbar rounded">
+            <div
+              id="progressBar"
+              class="prod-data--progressbar_current bg-primary rounded"
+            ></div>
+          </div>
+        </div>
+        <!-- Product Details -->
+        <div
+          id="prodDetails"
+          class="prod-details bg-white rounded flow flow--space-m"
+        >
+          <h2 class="fs-500 fw-700 text-dark">About this project</h2>
+          <p>
+            The Mastercraft Bamboo Monitor Riser is a sturdy and stylish
+            platform that elevates your screen to a more comfortable viewing
+            height. Placing your monitor at eye level has the potential to
+            improve your posture and make you more comfortable while at work,
+            helping you stay focused on the task at hand.
+          </p>
+          <p>
+            Featuring artisan craftsmanship, the simplicity of design creates
+            extra desk space below your computer to allow notepads, pens, and
+            USB sticks to be stored under the stand.
+          </p>
+          <!-- Product Details | plan a -->
+          <div class="prod-details--plan plan-card flow">
+            <header>
+              <h3 class="fw-700 text-dark">Bamboo Stand</h3>
+              <h4 class="fw-500 text-primary">Pledge $25 or more</h4>
+            </header>
+            <p>
+              You get an ergonomic stand made of natural bamboo. You've helped
+              us launch our promotional campaign, and you’ll be added to a
+              special Backer member list.
+            </p>
+            <div class="flex flex-column aifs">
+              <p>
+                <span id="dataStockLeft_1" class="fs-700 fw-700 text-dark"
+                  >101
+                </span>
+                left
+              </p>
+              <a
+                role="selectBtn"
+                data-card="card_1"
+                id="selectBtn_1"
+                href="#card_1"
+                class="btn btn-s"
+              >
+                Select Reward
+              </a>
+            </div>
+          </div>
+          <!-- Product Details | plan b -->
+          <div class="prod-details--plan plan-card flow">
+            <header>
+              <h3 class="fw-700 text-dark">Black Edition Stand</h3>
+              <h4 class="fw-500 text-primary">Pledge $75 or more</h4>
+            </header>
+            <p>
+              You get a Black Special Edition computer stand and a personal
+              thank you. You’ll be added to our Backer member list. Shipping is
+              included.
+            </p>
+            <div class="flex flex-column aifs">
+              <p>
+                <span id="dataStockLeft_2" class="fs-700 fw-700 text-dark"
+                  >64
+                </span>
+                left
+              </p>
+              <a
+                role="selectBtn"
+                id="selectBtn_2"
+                data-card="card_2"
+                href="#card_2"
+                class="btn btn-s"
+                >Select Reward</a
+              >
+            </div>
+          </div>
+          <!-- Product Details | plan c -->
+          <div class="prod-details--plan plan-card unavailable flow">
+            <header>
+              <h3 class="fw-700 text-dark">Mahogany Special</h3>
+              <h4 class="fw-500 text-primary">Pledge $200 or more</h4>
+            </header>
+            <p>
+              You get two Special Edition Mahogany stands, a Backer T-Shirt, and
+              a personal thank you. You’ll be added to our Backer member list.
+              Shipping is included.
+            </p>
+            <div class="flex flex-column aifs">
+              <p>
+                <span id="dataStockLeft_3" class="fs-700 fw-700 text-dark"
+                  >0
+                </span>
+                left
+              </p>
+              <a href="" class="btn btn-s">Out of Stock</a>
+            </div>
+          </div>
+        </div>
+      </section>
+      <!-- Product section end -->
+
+      <!-- Selection modal section start -->
+      <form
+        onsubmit="return false"
+        id="selectModal"
+        class="selection bg-white rounded flow flow--space-m"
+      >
+        <button id="selectCloseBtn" class="selection-btn-close">
+          <span class="sr-only">close</span>
+        </button>
+        <div class="bg-cover"></div>
+        <h2 class="fs-500 fw-700 text-dark">Back this project</h2>
+        <p>
+          Want to support us in bringing Mastercraft Bamboo Monitor Riser out in
+          the world?
+        </p>
+
+        <!-- Selection 0 : No Reward -->
+        <div
+          class="plan-card flow"
+          role="selectCard"
+          aria-controls="pledge_none"
+          data-controls="select_0"
+        >
+          <div class="plan-card--info flex flex-column">
+            <div class="flex">
+              <input
+                required
+                type="radio"
+                name="select"
+                id="select_0"
+                value="noReward"
+              />
+              <label for="select_0" class="fw-700 text-dark">
+                Pledge with no reward
+              </label>
+            </div>
+            <p>
+              Choose to support us without a reward if you simply believe in our
+              project. As a backer, you will be signed up to receive product upd
+              ates via email.
+            </p>
+          </div>
+          <div data-visible="false" id="pledge_none" role="selectPledge"></div>
+        </div>
+        <!-- Selection 1 : Bamboostand -->
+        <div
+          id="card_1"
+          class="plan-card flow"
+          role="selectCard"
+          aria-controls="pledge_1"
+          data-controls="select_1"
+        >
+          <div class="plan-card--info flex flex-column">
+            <div class="flex aic">
+              <input
+                type="radio"
+                name="select"
+                id="select_1"
+                value="bambooStand"
+              />
+              <div>
+                <label for="select_1" class="fw-700 text-dark">
+                  Bamboo Stand
+                  <div class="block fw-500 text-primary">
+                    Pledge $25 or more
+                  </div>
+                </label>
+              </div>
+            </div>
+            <p>
+              You get an ergonomic stand made of natural bamboo. You've helped
+              us launch our promotional campaign, and you’ll be added to a
+              special Backer member list.
+            </p>
+            <p>
+              <span id="pledgeStockLeft_1" class="fs-700 fw-700 text-dark"
+                >101
+              </span>
+              left
+            </p>
+          </div>
+
+          <!-- Selected pledge start -->
+          <div
+            data-visible="false"
+            id="pledge_1"
+            role="selectPledge"
+            class="selection-pledge text-center flow"
+          >
+            <label for="pledgeInput_1" class="block">Enter your pledge</label>
+            <div class="flex jcsb">
+              <div class="input-feild fw-700 text-center">
+                $
+                <input
+                  id="pledgeInput_1"
+                  name="pledgeInput_1"
+                  type="number"
+                  min="25"
+                  max="75"
+                  class="fs-400 fw-700 text-dark text-center"
+                />
+              </div>
+              <button
+                type="submit"
+                onclick="return selectFunction(pledgeInput_1, dataStockLeft_1, pledgeStockLeft_1, 'validNum_1')"
+                class="btn btn-s"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <!-- Selected pledge end -->
+        </div>
+        <!-- Selection 2 : Black Edition Stand -->
+        <div
+          id="card_2"
+          class="plan-card flow"
+          role="selectCard"
+          aria-controls="pledge_2"
+          data-controls="select_2"
+        >
+          <div class="plan-card--info flex flex-column">
+            <div class="flex aic">
+              <input
+                type="radio"
+                name="select"
+                id="select_2"
+                value="blackEditionStand"
+              />
+              <div>
+                <label for="select_2" class="fw-700 text-dark">
+                  Black Edition Stand
+                  <div class="block fw-500 text-primary">
+                    Pledge $75 or more
+                  </div>
+                </label>
+              </div>
+            </div>
+            <p>
+              You get a Black Special Edition computer stand and a personal
+              thank you. You’ll be added to our Backer member list. Shipping is
+              included.
+            </p>
+            <p>
+              <span id="pledgeStockLeft_2" class="fs-700 fw-700 text-dark"
+                >64
+              </span>
+              left
+            </p>
+          </div>
+          <!-- Selected pledge start -->
+          <div
+            data-visible="false"
+            id="pledge_2"
+            role="selectPledge"
+            class="selection-pledge text-center flow"
+          >
+            <label for="pledgeInput_2" class="block">Enter your pledge</label>
+            <div class="flex jcsb">
+              <div class="input-feild fw-700 text-center">
+                $
+                <input
+                  id="pledgeInput_2"
+                  name="pledgeInput_2"
+                  type="number"
+                  min="75"
+                  max="200"
+                  class="fs-400 fw-700 text-dark text-center"
+                />
+              </div>
+              <button
+                onclick="return selectFunction(pledgeInput_2, dataStockLeft_2, pledgeStockLeft_2, 'validNum_2')"
+                type="submit"
+                class="btn btn-s"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <!-- Selected pledge end -->
+        </div>
+        <!-- Selection 3 : Mahogany Special -->
+        <div
+          class="plan-card unavailable flow"
+          role="selectCard"
+          aria-controls="pledge_3"
+          data-controls="select_3"
+        >
+          <div class="plan-card--info flex flex-column">
+            <div class="flex aic">
+              <input
+                type="radio"
+                name="select"
+                id="select_3"
+                value="mahoganySpecial"
+                disabled
+              />
+              <div>
+                <label for="select_3" class="fw-700 text-dark">
+                  Mahogany Special
+                  <div class="block fw-500 text-primary">
+                    Pledge $200 or more
+                  </div>
+                </label>
+              </div>
+            </div>
+            <p>
+              You get two Special Edition Mahogany stands, a Backer T-Shirt, and
+              a personal thank you. You’ll be added to our Backer member list.
+              Shipping is included.
+            </p>
+            <p>
+              <span id="pledgeStockLeft_3" class="fs-700 fw-700 text-dark"
+                >0
+              </span>
+              left
+            </p>
+          </div>
+          <!-- Selected pledge  start -->
+          <div
+            data-visible="false"
+            id="pledge_3"
+            role="selectPledge"
+            class="selection-pledge text-center flow"
+          >
+            <label for="pledgeInput_3" class="block">Enter your pledge</label>
+            <div class="flex jcsb">
+              <div class="input-feild fw-700 text-center">
+                $
+                <input
+                  id="pledgeInput_3"
+                  name="pledgeInput_3"
+                  type="number"
+                  min="200"
+                  max="999"
+                  class="fs-400 fw-700 text-dark text-center"
+                />
+              </div>
+              <button
+                onclick="return selectFunction(pledgeInput_3, dataStockLeft_3, pledgeStockLeft_3, 'validNum_3')"
+                type="submit"
+                class="btn btn-s"
+              >
+                Continue
+              </button>
+            </div>
+          </div>
+          <!-- Selected pledge end -->
+        </div>
+      </form>
+      <!-- Selection modal section end -->
+
+      <!-- Success modal section start -->
+      <section
+        id="successModal"
+        class="success flow flow--space-m bg-white rounded text-center shadow"
+      >
+        <img src="./images/icon-check.svg" alt="" />
+        <h2 class="fs-500 fw-700 text-dark">Thanks for your support!</h2>
+        <p>
+          Your pledge brings us one step closer to sharing Mastercraft Bamboo
+          Monitor Riser worldwide. You will get an email once our campaign is
+          completed.
+        </p>
+        <a id="successCloseBtn" href="#" class="btn">Got it!</a>
+      </section>
+      <!-- Success modal end -->
+    </main>
+
+    <footer>
+      <div class="attribution">
+        Challenge by
+        <a
+          class="fw-700 text-secondary"
+          href="https://www.frontendmentor.io?ref=challenge"
+          target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a class="fw-700 text-secondary" href="https://github.com/GretaLi"
+          >Greta Li</a
+        >.
+      </div>
+    </footer>
+  </body>
+</html>
