@@ -1,0 +1,115 @@
+/*------------------*/
+/* HTML Attributes  */
+/*------------------*/
+
+/_Primary Header_/
+#primaryHeader
+
+#navbar
+data-hidden
+
+#navbarToggle
+aria-controls="navbar"
+aria-expanded="false"
+
+/_Product Section_/
+#backBtn
+
+#bookmarkBtn
+data-bookmark="false"
+
+#dataAmount
+.odometer_amount.animated
+data-amount="89914"
+
+#dataBackers
+.odometer_backer.animated
+
+#progressBar
+.prod-data--progressbar_current
+(container: .prod-data--progressbar)
+
+
+#dataStockLeft_1
+#selectBtn_1
+role="selectBtn"
+data-card="card_1"
+href="#card_1"
+
+#dataStockLeft_2
+#selectBtn_2
+role="selectBtn"
+data-card="card_2"
+href="#card_2"
+
+#dataStockLeft_3
+(out of stock)
+
+
+
+/_Selection Modal_/
+
+#selectModal
+onsubmit="return false"
+
+#selectCloseBtn
+
+**Selection 0 : No Reward**
+role="selectCard"
+aria-controls="pledge_none"
+data-controls="select_0"
+
+#select_0
+type="radio"
+name="select"
+value="noReward"
+
+#pledge_none
+role="selectPledge"
+data-visible="false"
+
+#pledgeInput_0
+type="number"
+value="0"
+
+button
+onclick="return selectFunction('pledgeInput_0', '', '', 'validNum_0')"
+type="submit"
+
+**Selection 1 : Bamboostand**
+#card_1
+role="selectCard"
+aria-controls="pledge_1"
+data-controls="select_1"
+
+#select_1
+type="radio"
+name="select"
+value="bambooStand"
+
+#pledgeStockLeft_1
+
+#pledge_1
+role="selectPledge"
+data-visible="false"
+
+#pledgeInput_1
+type="number"
+name="pledgeInput_1"
+min="25"
+max="75"
+onfocus="inputFeildFocus('pledgeInput_1', 'inputFocus')" (add .inputFocus)
+onblur="inputFeildOnBlur('pledgeInput_1', 'inputFocus')" (remove .inputFocus)
+
+button
+type="submit"
+onclick="return selectFunction(pledgeInput_1, dataStockLeft_1, pledgeStockLeft_1, 'validNum_1')"
+
+......
+
+
+/_Success Modal_/
+#successModal
+
+#successCloseBtn
+

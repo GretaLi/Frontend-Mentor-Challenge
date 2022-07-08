@@ -88,18 +88,21 @@
         <div id="prodData" class="prod-data flow bg-white rounded text-center">
           <div class="flex flex-column aic">
             <p>
-              <span
-                id="prod-data--amount"
-                data-amount="89914"
-                class="odometer_amount animated fadeIn block fs-700 fw-700 text-dark"
-                >$89,914</span
+              <span class="flex aic fs-700 fw-700 text-dark" style="gap: 0.5rem"
+                >$<span
+                  id="dataAmount"
+                  data-amount="89914"
+                  class="odometer_amount animated fadeIn"
+                  style="width: 100%"
+                  >89914</span
+                ></span
               >
               of $100,000 backed
             </p>
             <div class="divider"></div>
             <p>
               <span
-                id="prod-data--backers"
+                id="dataBackers"
                 class="odometer_backer animated block fs-700 fw-700 text-dark"
                 >5,007</span
               >
@@ -107,8 +110,7 @@
             </p>
             <div class="divider"></div>
             <p>
-              <span id="prod-data--days" class="block fs-700 fw-700 text-dark"
-                >56</span
+              <span id="dataDays" class="block fs-700 fw-700 text-dark">56</span
               >days left
             </p>
           </div>
@@ -212,7 +214,7 @@
                 </span>
                 left
               </p>
-              <a href="" class="btn btn-s">Out of Stock</a>
+              <a class="btn btn-s">Out of Stock</a>
             </div>
           </div>
         </div>
@@ -262,9 +264,9 @@
             </p>
           </div>
           <div
-            data-visible="false"
-            id="pledge_none"
             role="selectPledge"
+            id="pledge_none"
+            data-visible="false"
             class="selection-pledge text-center flow"
           >
             <div class="flex jcfe" style="width: 100%">
@@ -325,9 +327,9 @@
 
           <!-- Selected pledge start -->
           <div
-            data-visible="false"
             id="pledge_1"
             role="selectPledge"
+            data-visible="false"
             class="selection-pledge text-center flow"
           >
             <label for="pledgeInput_1" class="block">Enter your pledge</label>

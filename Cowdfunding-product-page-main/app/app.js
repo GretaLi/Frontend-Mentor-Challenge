@@ -1,4 +1,29 @@
 /*------------------*/
+/* Javascript Index */
+/*------------------*/
+
+// Home Page
+//    Navigation
+//    Bookmark btn
+//    Back this project btn
+//    Select Reward btn
+//
+// Selection Modal
+//    Select Card
+//    Data Display
+//    --Number animation I
+//    --Submit function
+//    Submit success
+//    Input feild focus style
+//
+// Success Modal
+//    Close btn
+//
+// Animation (jQuery)
+//    Number animation II
+//    Data card pop & return
+
+/*------------------*/
 /* Home Page        */
 /*------------------*/
 
@@ -15,13 +40,12 @@ navToggle.addEventListener("click", function (e) {
   );
   nav.toggleAttribute("data-hidden");
   bgContainer.classList.toggle("bg-linear");
-  console.log(bgContainer);
 
   //[UNSURE] when nav is open, close Selection modal and Sucess modal
   closeSelecModal();
 });
 
-//Summary | Bookmark
+//Summary | Bookmark btn
 const bookmarkBtn = document.querySelector("#bookmarkBtn");
 const bookmark = document.querySelector(".prod-summary--bookmark");
 const bookmarkText = bookmark.childNodes[3];
@@ -42,21 +66,21 @@ bookmarkBtn.addEventListener("click", () => {
   }
 });
 
-// Summary | back this project //
+// Summary | Back this project btn
 
 // when click on "Back this project" btn...
 // 1. show selection modal
 // 2. add "bg-shage" class on header
 
-// const bgContainer = document.querySelector("#primaryHeader");
-// let selectModal = document.querySelector("#selectModal");
-console.log(selectModal);
+const backBtn = document.querySelector("#backBtn");
+const selectModal = document.querySelector("#selectModal");
+
 backBtn.addEventListener("click", (e) => {
   selectModal.style.display = "block";
   bgContainer.classList.add("bg-shade");
 });
 
-// Product plan | select reward //
+// Product plan | Select Reward btn
 
 // when click on "Select Reward" btn...
 // 1. show selection modal
@@ -79,6 +103,9 @@ selectBtns.forEach((btn) =>
 /*------------------*/
 
 // Selection | Select Card 選擇卡片
+
+// when click on unavailable card...
+// no action
 
 // when click on target card...
 // 0. remove below 3 settings from all cards as default
@@ -163,32 +190,35 @@ function selectCard(targetCard) {
 }
 
 // Selection | Data Display 數據顯示
-const dataBackers = document.getElementById("prod-data--backers");
+const dataBackers = document.getElementById("dataBackers");
 const progressBar = document.getElementById("progressBar");
 const dataCard = document.getElementById("prodData");
 
+// Number animation I
 // input original data with animation and store it in dataAmount
 numberAnimation(".odometer_amount", 89914);
 let dataAmount = 89914;
 numberAnimation(".odometer_backer", 5007);
 let dataBacker = 5007;
 
+// Submit function
 // after submit the form, check which plan the user selected...
-// 1. check if input number is value
-// 2. close selection modal
-// 3. pop out data card
-// 4. display data
+// 0. check which plan is sebmited
+// 1. check if input number is valid
+// 2. display data
+// 3. close selection modal
+// 4. pop out data card
 // 5. show success modal
 // 6. return data card
 
 function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
   //  if select Bamboo Stand...
-  if (validNum == "validNum_1") {
+  if (validNum === "validNum_1") {
     let maxNum = 75;
     let minNum = 25;
 
     if (inputAmount.value > maxNum || inputAmount.value < minNum) {
-      alert("please insert amount between 25 and 75.");
+      return;
     } else {
       dataDisplay(".odometer_amount", ".odometer_backer");
       submitFunciton();
@@ -196,12 +226,12 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
   }
 
   //  if select Black Edition Stand...
-  else if (validNum == "validNum_2") {
+  else if (validNum === "validNum_2") {
     let maxNum = 200;
     let minNum = 75;
 
     if (inputAmount.value > maxNum || inputAmount.value < minNum) {
-      alert("please insert amount between 75 and 200.");
+      return;
     } else {
       dataDisplay(".odometer_amount", ".odometer_backer");
       submitFunciton();
@@ -209,12 +239,12 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
   }
 
   // if select Mahogany Special...
-  else if (validNum == "validNum_3") {
+  else if (validNum === "validNum_3") {
     let maxNum = 999;
     let minNum = 200;
 
     if (inputAmount.value > maxNum || inputAmount.value < minNum) {
-      alert("please insert amount between 200 and 999.");
+      return;
     } else {
       dataDisplay(".odometer_amount", ".odometer_backer");
       submitFunciton();
@@ -222,7 +252,7 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
   }
 
   //  if select Pledge with no reward...
-  else if (validNum == "validNum_0") {
+  else if (validNum === "validNum_0") {
     let currentBacker = parseInt(dataBacker);
     currentBacker++;
     while (dataBacker <= 10000) {
@@ -273,31 +303,14 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
   function submitFunciton() {
     closeSelecModal();
     dataPop(dataCard);
-    setTimeout(() => submitSuccess(), 4000);
+    setTimeout(() => {
+      successModal.style.display = "block";
+    }, 4000);
     setTimeout(() => dataBack(dataCard), 4000);
   }
 }
 
-// data | number commas convert
-function numberWithoutCommas(y) {
-  return y.replace("$", "").replace(",", "");
-}
-
-function numberWithCommas(x) {
-  return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-}
-
-// Selection | input feild focus / on blur
-function inputFeildFocus(inputId, focusClassName) {
-  let inputFeild = document.getElementById(inputId).parentNode;
-  inputFeild.classList.add(focusClassName);
-}
-function inputFeildOnBlur(inputId, focusClassName) {
-  let inputFeild = document.getElementById(inputId).parentNode;
-  inputFeild.classList.remove(focusClassName);
-}
-
-// Selection | submit success
+// Selection | Submit success
 // after submit the form...
 // 1. close selection modal
 // 2. open sucess modal
@@ -307,15 +320,21 @@ function closeSelecModal() {
   removeSelectCard();
 }
 
+// Selection | Input feild focus style
+function inputFeildFocus(inputId, focusClassName) {
+  let inputFeild = document.getElementById(inputId).parentNode;
+  inputFeild.classList.add(focusClassName);
+}
+function inputFeildOnBlur(inputId, focusClassName) {
+  let inputFeild = document.getElementById(inputId).parentNode;
+  inputFeild.classList.remove(focusClassName);
+}
+
 /*------------------*/
 /* Success Modal    */
 /*------------------*/
 
-function submitSuccess() {
-  successModal.style.display = "block";
-}
-
-// Success Modal | Close
+// Success Modal | Close btn
 // when click on close btn..
 // 1. close modal
 // 2. remove "bg-shade" from header
@@ -329,7 +348,7 @@ successCloseBtn.addEventListener("click", () => {
 /* Animation (jQuery) */
 /*--------------------*/
 
-// data card number animation
+// Number animation II | data card number animation
 // source: https://codepen.io/jimut/pen/aNwEbG
 function numberAnimation(item, num) {
   var odometer = new Odometer({
@@ -343,6 +362,7 @@ function numberAnimation(item, num) {
   $(item).text(num);
 }
 
+// Data card pop & return
 // data card pop animation
 function dataPop(card) {
   $(bgContainer).addClass("bg-shade");
