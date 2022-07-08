@@ -166,6 +166,8 @@ function selectCard(targetCard) {
 }
 ```
 
+---
+
 #### **[ Data Display ]**
 
 **After submit the form, check which plan the user selected...**
@@ -293,6 +295,7 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
   }
 }
 ```
+---
 
 **Part II**
 
