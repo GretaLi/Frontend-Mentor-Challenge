@@ -218,7 +218,7 @@ window.onclick = function (e) {
 
 - [Event Delegation](https://dmitripavlutin.com/javascript-event-delegation/) - Use Event delegation to decrease event listener for more efficient solution.
 
-- [Toggle True or False](https://stackoverflow.com/questions/12551330/jquery-toggle-true-or-false-on-data-filter)
+- [Toggle True or False](https://stackoverflow.com/questions/12551330/jquery-toggle-true-or-false-on-data-filter) - isomg data-XXX attribute.
 
 ## Author
 
