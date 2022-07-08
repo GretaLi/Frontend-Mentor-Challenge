@@ -143,6 +143,10 @@ span {
   justify-content: space-between;
 }
 
+.jcfe {
+  justify-content: flex-end;
+}
+
 .aic {
   align-items: center;
 }
@@ -313,7 +317,7 @@ span {
 .plan-card {
   padding: 2rem 1.5rem;
   background: hsl(var(--crl-white));
-  border: 1px solid hsl(var(--crl-border));
+  border: 2px solid hsl(var(--crl-border));
   border-radius: 10px;
 }
 
@@ -330,19 +334,6 @@ span {
 // plan-card unavailable
 .unavailable {
   opacity: 0.5;
-}
-
-.unavailable .btn {
-  background-color: hsl(var(--crl-light), 0.7);
-  &:hover {
-    opacity: 1;
-    cursor: unset;
-  }
-}
-
-// selection-pledge selected
-.selected {
-  border: 1px solid hsl(var(--crl-primary));
 }
 
 /*--------------------*/
@@ -497,21 +488,6 @@ span {
     }
   }
 
-  &-summary--bookmark button {
-    position: relative;
-    z-index: 1;
-    width: 3.5rem;
-    aspect-ratio: 1;
-    background: url(../images/icon-bookmark.svg) no-repeat;
-    background-color: "#2F2F2F";
-    background-position: center center;
-    border-radius: 50%;
-    border: none;
-    &:hover {
-      opacity: 0.8;
-    }
-  }
-
   &-summary *:last-child {
     gap: 0;
   }
@@ -557,6 +533,24 @@ span {
       align-items: center;
     }
   }
+}
+
+// prod-summary--bookmark button | switch on / off
+.bookmark {
+  position: relative;
+  z-index: 1;
+  width: 3.5rem;
+  aspect-ratio: 1;
+  background: url(../images/icon-bookmark.svg) no-repeat;
+  background-color: "#2F2F2F";
+  background-position: center center;
+  border-radius: 50%;
+  border: none;
+}
+.bookmark-marked {
+  background: url(../images/icon-bookmark_marked.svg) no-repeat;
+  background-color: hsl(var(--crl-secondary));
+  background-position: center center;
 }
 
 // data card pop effect
@@ -627,6 +621,18 @@ span {
     cursor: pointer;
   }
 
+  label.fw-700 {
+    &:hover {
+      color: hsl(var(--crl-primary));
+    }
+  }
+
+  .unavailable label.fw-700 {
+    &:hover {
+      color: hsl(var(--crl-dark));
+    }
+  }
+
   input[type="radio"] {
     width: 1.5rem;
     aspect-ratio: 1;
@@ -651,10 +657,6 @@ span {
     @include md {
       padding-inline: 2rem;
     }
-  }
-
-  .input-feild:focus {
-    border-color: hsl(var(--crl-primary));
   }
 }
 
@@ -693,6 +695,25 @@ span {
   }
 }
 
+// selection | plan-card | selected
+.selected {
+  border: 2px solid hsl(var(--crl-primary));
+  label {
+    div.block {
+      font-weight: 700;
+    }
+  }
+}
+.selection-pledge[data-visible="false"] {
+  display: none;
+}
+
+// selection | plan-card | input onfocus
+.selection .inputFocus {
+  border: 1px solid hsl(var(--crl-primary));
+}
+
+// success modal
 .success {
   display: none;
   position: absolute;
@@ -703,10 +724,6 @@ span {
   max-width: 30rem;
   margin-inline: auto;
   background-color: white;
-}
-
-.selection-pledge[data-visible="false"] {
-  display: none;
 }
 
 // for data animation

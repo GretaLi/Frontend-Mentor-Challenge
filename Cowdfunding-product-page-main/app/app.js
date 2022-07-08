@@ -24,20 +24,21 @@ navToggle.addEventListener("click", function (e) {
 //Summary | Bookmark
 const bookmarkBtn = document.querySelector("#bookmarkBtn");
 const bookmark = document.querySelector(".prod-summary--bookmark");
+const bookmarkText = bookmark.childNodes[3];
 
 bookmarkBtn.addEventListener("click", () => {
   let marked = bookmarkBtn.getAttribute("data-bookmark");
 
   if (marked === "false") {
     bookmarkBtn.setAttribute("data-bookmark", true);
-    bookmarkBtn.style.backgroundImage =
-      "url(/Cowdfunding-product-page-main/images/icon-bookmark_marked.svg)";
-    bookmark.style.color = "hsl(var(--crl-secondary))";
+    bookmarkBtn.classList.add("bookmark-marked");
+    bookmark.classList.add("text-secondary");
+    bookmarkText.innerHTML = "Bookmarked";
   } else {
     bookmarkBtn.setAttribute("data-bookmark", false);
-    bookmarkBtn.style.backgroundImage =
-      "url(/Cowdfunding-product-page-main/images/icon-bookmark.svg)";
-    bookmark.style.color = "hsl(var(--crl-dark))";
+    bookmarkBtn.classList.remove("bookmark-marked");
+    bookmark.classList.remove("text-secondary");
+    bookmarkText.innerHTML = "Bookmark";
   }
 });
 
@@ -104,29 +105,33 @@ selectBtns.forEach((btn) =>
 selectModal.addEventListener("click", selectStyle, false);
 
 function selectStyle(e) {
-  // when click on target card...
-  if (e.target.getAttribute("role") == "selectCard") {
-    let targetCard = e.target;
-    removeSelectCard();
-    selectCard(targetCard);
-    console.log(targetCard);
-  }
+  // when click on unavailable card...
+  if (e.target.classList.contains("unavailable")) {
+    return;
+  } else {
+    // when click on target card...
+    if (e.target.getAttribute("role") == "selectCard") {
+      let targetCard = e.target;
+      removeSelectCard();
+      selectCard(targetCard);
+    }
 
-  // when click on target input radio...
-  if (e.target.getAttribute("name") === "select") {
-    let targetCardDataControls = e.target.getAttribute("id");
-    let targetCard = document.querySelector(
-      `[data-controls='${targetCardDataControls}']`
-    );
-    removeSelectCard();
-    selectCard(targetCard);
-  }
+    // when click on target input radio...
+    if (e.target.getAttribute("name") === "select") {
+      let targetCardDataControls = e.target.getAttribute("id");
+      let targetCard = document.querySelector(
+        `[data-controls='${targetCardDataControls}']`
+      );
+      removeSelectCard();
+      selectCard(targetCard);
+    }
 
-  // when click on close btn...
-  if (e.target.getAttribute("id") === "selectCloseBtn") {
-    selectModal.style.display = "none";
-    bgContainer.classList.remove("bg-shade");
-    removeSelectCard();
+    // when click on close btn...
+    if (e.target.getAttribute("id") === "selectCloseBtn") {
+      selectModal.style.display = "none";
+      bgContainer.classList.remove("bg-shade");
+      removeSelectCard();
+    }
   }
 }
 
@@ -191,7 +196,7 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
   }
 
   //  if select Black Edition Stand...
-  if (validNum == "validNum_2") {
+  else if (validNum == "validNum_2") {
     let maxNum = 200;
     let minNum = 75;
 
@@ -202,6 +207,7 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
       submitFunciton();
     }
   }
+
   // if select Mahogany Special...
   else if (validNum == "validNum_3") {
     let maxNum = 999;
@@ -215,11 +221,16 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
     }
   }
 
-  function submitFunciton() {
-    closeSelecModal();
-    dataPop(dataCard);
-    setTimeout(() => submitSuccess(), 4000);
-    setTimeout(() => dataBack(dataCard), 4000);
+  //  if select Pledge with no reward...
+  else if (validNum == "validNum_0") {
+    let currentBacker = parseInt(dataBacker);
+    currentBacker++;
+    while (dataBacker <= 10000) {
+      dataBacker++;
+      break;
+    }
+    numberAnimation(".odometer_backer", currentBacker);
+    submitFunciton();
   }
 
   function dataDisplay(item1, item2) {
@@ -258,6 +269,13 @@ function selectFunction(inputAmount, dataStockLeft, pledgeStockLeft, validNum) {
     currentProgress = (currentProgress / 100000) * 100;
     progressBar.style.width = currentProgress + "%";
   }
+
+  function submitFunciton() {
+    closeSelecModal();
+    dataPop(dataCard);
+    setTimeout(() => submitSuccess(), 4000);
+    setTimeout(() => dataBack(dataCard), 4000);
+  }
 }
 
 // data | number commas convert
@@ -269,7 +287,17 @@ function numberWithCommas(x) {
   return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
 }
 
-// Selection |submit success
+// Selection | input feild focus / on blur
+function inputFeildFocus(inputId, focusClassName) {
+  let inputFeild = document.getElementById(inputId).parentNode;
+  inputFeild.classList.add(focusClassName);
+}
+function inputFeildOnBlur(inputId, focusClassName) {
+  let inputFeild = document.getElementById(inputId).parentNode;
+  inputFeild.classList.remove(focusClassName);
+}
+
+// Selection | submit success
 // after submit the form...
 // 1. close selection modal
 // 2. open sucess modal
@@ -319,7 +347,7 @@ function numberAnimation(item, num) {
 function dataPop(card) {
   $(bgContainer).addClass("bg-shade");
   $(card).addClass("shadow").addClass("dataCardPop");
-  $("html,body").animate({ scrollTop: -500 });
+  $("html,body").animate({ scrollTop: 100 });
   $(card).fadeIn(3000).delay(3000).fadeOut("slow");
 }
 
