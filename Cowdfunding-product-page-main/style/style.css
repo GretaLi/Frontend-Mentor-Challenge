@@ -516,6 +516,12 @@ span {
     align-items: center;
   }
 }
+@media (min-width: 600px) {
+  .prod-details--plan header {
+    display: flex;
+    justify-content: space-between;
+  }
+}
 
 .bookmark {
   position: relative;
@@ -640,6 +646,7 @@ span {
   }
   .selection .plan-card--info > *:nth-child(1) label {
     display: flex;
+    align-items: center;
     gap: 1rem;
   }
   .selection .plan-card--info > *:nth-child(3) {
@@ -657,7 +664,7 @@ span {
 .selected {
   border: 2px solid hsl(var(--crl-primary));
 }
-.selected label div.block {
+.selected label span.block {
   font-weight: 700;
 }
 

@@ -87,7 +87,7 @@ Although the code still could be more concise, I'm really happy to see how it tr
 
 _Notes: HTML Attribute settings for each card..._
 
-- `role="selectCard"` (use for manipulating card - itself)
+- `data-role="selectCard"` (use for manipulating card - itself)
 - `aria-controls=""` (use for manipulating pledge aria)
 - `data-controls=""` (use for manipulating input radio)
 
@@ -105,7 +105,7 @@ function selectStyle(e) {
     return;
   } else {
     // when click on target card...
-    if (e.target.getAttribute("role") == "selectCard") {
+    if (e.target.getAttribute("data-role") == "selectCard") {
       let targetCard = e.target;
       removeSelectCard();
       selectCard(targetCard);
@@ -136,13 +136,13 @@ function selectStyle(e) {
 ```js
 function removeSelectCard() {
   // 0. remove below 3 settings
-  let cards = document.querySelectorAll("[role='selectCard']");
+  let cards = document.querySelectorAll("[data-role='selectCard']");
   cards.forEach((card) => card.classList.remove("selected"));
 
   let radios = document.querySelectorAll("[name='select']");
   radios.forEach((radio) => (radio.checked = false));
 
-  let pledges = document.querySelectorAll("[role='selectPledge']");
+  let pledges = document.querySelectorAll("[data-role='selectPledge']");
   pledges.forEach((pledge) => pledge.setAttribute("data-visible", false));
 }
 ```

@@ -55,7 +55,7 @@ onsubmit="return false"
 #selectCloseBtn
 
 **Selection 0 : No Reward**
-role="selectCard"
+data-role="selectCard"
 aria-controls="pledge_none"
 data-controls="select_0"
 
@@ -65,7 +65,7 @@ name="select"
 value="noReward"
 
 #pledge_none
-role="selectPledge"
+data-role="selectPledge"
 data-visible="false"
 
 #pledgeInput_0
@@ -78,7 +78,7 @@ type="submit"
 
 **Selection 1 : Bamboostand**
 #card_1
-role="selectCard"
+data-role="selectCard"
 aria-controls="pledge_1"
 data-controls="select_1"
 
@@ -90,7 +90,7 @@ value="bambooStand"
 #pledgeStockLeft_1
 
 #pledge_1
-role="selectPledge"
+data-role="selectPledge"
 data-visible="false"
 
 #pledgeInput_1

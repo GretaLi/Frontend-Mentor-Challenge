@@ -533,6 +533,13 @@ span {
       align-items: center;
     }
   }
+
+  &-details--plan header {
+    @include md {
+      display: flex;
+      justify-content: space-between;
+    }
+  }
 }
 
 // prod-summary--bookmark button | switch on / off
@@ -674,6 +681,7 @@ span {
       width: 65%;
       label {
         display: flex;
+        align-items: center;
         gap: 1rem;
       }
     }
@@ -699,7 +707,7 @@ span {
 .selected {
   border: 2px solid hsl(var(--crl-primary));
   label {
-    div.block {
+    span.block {
       font-weight: 700;
     }
   }
