@@ -86,7 +86,7 @@ backBtn.addEventListener("click", (e) => {
 // 1. show selection modal
 // 2. add "bg-shage" class on header
 // 3. select exact card by using selecCard funciton
-const selectBtns = document.querySelectorAll("[role='selectBtn']");
+const selectBtns = document.querySelectorAll("[data-role='selectBtn']");
 
 selectBtns.forEach((btn) =>
   btn.addEventListener("click", function selectBtn(e) {

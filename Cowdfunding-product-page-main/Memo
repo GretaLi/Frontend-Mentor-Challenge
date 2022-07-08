@@ -32,13 +32,13 @@ data-amount="89914"
 
 #dataStockLeft_1
 #selectBtn_1
-role="selectBtn"
+data-role="selectBtn"
 data-card="card_1"
 href="#card_1"
 
 #dataStockLeft_2
 #selectBtn_2
-role="selectBtn"
+data-role="selectBtn"
 data-card="card_2"
 href="#card_2"
 
