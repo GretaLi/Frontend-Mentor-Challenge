@@ -129,7 +129,7 @@ span {
   justify-content: center;
   min-height: 100vh;
   max-width: 30rem;
-  padding: 3.5rem 1.5rem;
+  padding: 3.5rem 1.5rem 1rem;
   padding-inline: 1.5rem;
   margin-inline: auto;
   @include lg {
@@ -282,6 +282,8 @@ span {
       display: flex;
       justify-content: space-between;
       align-items: center;
+      min-height: 45vh;
+      margin-top: auto;
     }
     &-header {
       width: 40%;
@@ -301,7 +303,7 @@ span {
       width: clamp(300px, 40vw + 2rem, 500px);
       display: flex;
       flex-direction: row;
-      gap: 3rem;
+      gap: 2rem;
       padding-left: 2.5rem;
       text-align: left;
       div {
@@ -319,9 +321,10 @@ span {
 
     &-review {
       flex-direction: row;
-      align-items: center;
+      align-items: flex-start;
       margin-bottom: 0;
       gap: 2rem;
+      min-height: 40vh;
     }
 
     &-review--item {
@@ -329,12 +332,16 @@ span {
     }
 
     &-review--item:nth-child(2) {
-      margin-top: 3rem;
+      align-self: center;
     }
 
     &-review--item:nth-child(3) {
-      margin-top: 6rem;
+      align-self: flex-end;
     }
+  }
+
+  footer {
+    margin-top: auto;
   }
 }
 
