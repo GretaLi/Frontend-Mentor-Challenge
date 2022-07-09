@@ -153,7 +153,7 @@ table {
 
 @media (min-width: 600px) {
   :root {
-    --fs-600: 4rem;
+    --fs-600: 3.5rem;
     --fs-400: 1rem;
   }
 }
@@ -406,7 +406,6 @@ span {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 2rem;
   }
   .social-header {
     width: 40%;
@@ -444,7 +443,7 @@ span {
     gap: 2rem;
   }
   .social-review--item {
-    padding: 3rem 2.5rem;
+    padding: 2.5rem;
   }
   .social-review--item:nth-child(2) {
     margin-top: 3rem;
