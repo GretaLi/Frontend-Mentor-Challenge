@@ -428,7 +428,7 @@ span {
   .card-info {
     align-items: stretch;
     width: 50%;
-    padding: 4rem;
+    padding: 4rem 5rem 4rem 4rem;
     text-align: left;
   }
   .card-info p {
