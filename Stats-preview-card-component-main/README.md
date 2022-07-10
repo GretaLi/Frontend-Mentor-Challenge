@@ -10,6 +10,7 @@ This is a solution to the [Stats preview card component challenge on Frontend Me
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
+  - [What I learned](#what-i-learned)
 - [Author](#author)
 
 ## Overview
@@ -37,6 +38,18 @@ Users should be able to:
 - CSS custom properties
 - Flexbox
 - Mobile-first workflow
+
+### What I learned
+
+**Blend color on background image**
+
+```css
+background-image: url(../images/image-header-mobile.jpg);
+background-color: hsl(var(--crl-accent));
+background-blend-mode: multiply;
+background-size: cover;
+background-repeat: no-repeat;
+```
 
 ## Author
 
