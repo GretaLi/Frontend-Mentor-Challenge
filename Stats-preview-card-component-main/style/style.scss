@@ -133,7 +133,7 @@ span {
   padding-inline: 1.5rem;
   margin-inline: auto;
   @include lg {
-    max-width: 70rem;
+    max-width: 75rem;
   }
 }
 
@@ -246,13 +246,17 @@ span {
   display: flex;
   flex-direction: column-reverse;
   &-img {
-    background: linear-gradient(
-        hsl(var(--crl-accent), 0.6),
-        hsl(var(--crl-accent), 0.6)
-      ),
-      url(../images/image-header-mobile.jpg) no-repeat;
     height: 240px;
+    // background: linear-gradient(
+    //     hsl(var(--crl-accent), 0.6),
+    //     hsl(var(--crl-accent), 0.6)
+    //   ),
+    //   url(../images/image-header-mobile.jpg) no-repeat;
+    background-image: url(../images/image-header-mobile.jpg);
+    background-color: hsl(var(--crl-accent));
+    background-blend-mode: multiply;
     background-size: cover;
+    background-repeat: no-repeat;
     border-radius: 10px 10px 0 0;
   }
 
@@ -291,11 +295,7 @@ span {
     &-img {
       width: 50%;
       height: auto;
-      background: linear-gradient(
-          hsl(var(--crl-accent), 0.6),
-          hsl(var(--crl-accent), 0.6)
-        ),
-        url(../images/image-header-desktop.jpg) no-repeat;
+      background-image: url(../images/image-header-desktop.jpg);
       background-size: cover;
       background-position: center center;
       border-radius: 0px 10px 10px 0;
@@ -304,7 +304,7 @@ span {
     &-info {
       align-items: stretch;
       width: 50%;
-      padding: 5rem;
+      padding: 4rem;
       text-align: left;
       p {
         max-width: 40ch;
