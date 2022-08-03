@@ -18,7 +18,7 @@ body .bg {
 .content-txt > *:nth-child(2) {
   padding-bottom: 2rem;
   margin-bottom: 2rem;
-  border-bottom: 1px solid hsl(var(--crl-divider));
+  border-bottom: 1px solid hsl(var(--clr-divider));
 }
 
 .content-txt > *:nth-child(3) {
