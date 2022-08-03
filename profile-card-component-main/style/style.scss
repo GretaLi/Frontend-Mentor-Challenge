@@ -173,10 +173,11 @@ main {
 }
 
 .card {
-  max-width: 26rem;
+  max-width: 24rem;
   position: relative;
   margin-inline: auto;
   box-shadow: 0 15px 35px hsl(var(--clr-secondary), 0.5);
+  text-align: center;
   &-bg {
     height: 150px;
     background: url(../images/bg-pattern-card.svg) no-repeat;
@@ -185,22 +186,23 @@ main {
   }
 
   &-avatar {
-    width: 7rem;
-    position: absolute;
+    position: relative;
     z-index: 2;
-    inset: 150px 50% auto auto;
-    transform: translate(50%, -50%);
+    display: inline-block;
+    width: 6rem;
+    margin-top: -3rem;
     border-radius: 50%;
   }
 
   // avatar white background
   &::after {
     content: "";
+    z-index: 0;
     width: 7rem;
     aspect-ratio: 1;
     position: absolute;
     inset: 150px 50% auto auto;
-    transform: translate(50%, -50%) scale(1.1);
+    transform: translate(50%, -50%) scale(1.01);
     background-color: #fff;
     border-radius: 50%;
   }
@@ -211,6 +213,9 @@ main {
     h2 {
       margin-bottom: 1rem;
       padding-inline: 1rem;
+    }
+    h1 {
+      text-shadow: 2px 2px 0px hsl(var(--clr-primary), 0.5);
     }
     h2 {
       padding-bottom: 1rem;
@@ -231,6 +236,13 @@ main {
 
     @include sm {
       flex-direction: column;
+    }
+
+    p:hover {
+      text-shadow: 2px 2px 0px hsl(var(--clr-primary), 0.5);
+      transform: translateY(-2px) scale(1.2);
+      cursor: pointer;
+      transition: all 0.5s ease;
     }
   }
 }
