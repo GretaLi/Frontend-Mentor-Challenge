@@ -309,12 +309,12 @@ main {
   position: relative;
   margin-inline: auto;
   box-shadow: 0 15px 35px hsl(var(--clr-secondary), 0.5);
-  overflow: hidden;
 }
 .card-bg {
   height: 150px;
   background: url(../images/bg-pattern-card.svg) no-repeat;
   background-size: cover;
+  border-radius: 10px 10px 0 0;
 }
 .card-avatar {
   width: 7rem;
@@ -340,6 +340,7 @@ main {
 .card-text h1,
 .card-text h2 {
   margin-bottom: 1rem;
+  padding-inline: 1rem;
 }
 .card-text h2 {
   padding-bottom: 1rem;
@@ -348,12 +349,18 @@ main {
   display: flex;
   gap: 2rem;
   justify-content: center;
+  flex-wrap: wrap;
   border-top: 1px solid hsl(var(--clr-border));
   padding-top: 2rem;
 }
 .card-text--data small {
   display: block;
   letter-spacing: 2px;
+}
+@media (max-width: 320px) {
+  .card-text--data {
+    flex-direction: column;
+  }
 }
 
 /*--------------------*/
