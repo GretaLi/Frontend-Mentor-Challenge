@@ -1,0 +1,243 @@
+@import "reset";
+@import "breakpoints";
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
+
+/*--------------------*/
+/* Custom properties  */
+/*--------------------*/
+
+:root {
+  /* colors */
+  --clr-primary: 185, 75%, 39%;
+  --clr-secondary: 229, 23%, 23%;
+  --clr-light: 227, 10%, 46%;
+  --clr-border: 0, 0%, 59%;
+  --clr-white: 0, 0%, 100%;
+
+  /* font-sizes */
+  --fs-400: 1.125rem;
+  --fs-300: 1rem;
+  --fs-200: 0.75rem;
+
+  /* font-families */
+  --ff-sans: "Kumbh Sans", sans-serif;
+}
+
+/*--------------------*/
+/* Base               */
+/*--------------------*/
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--ff-sans);
+  font-size: var(--fs-400);
+  background-color: hsl(var(--clr-primary));
+  color: hsl(var(--clr-secondary));
+  line-height: 1.5;
+  min-height: 100vh;
+}
+
+::selection {
+  background-color: hsl(var(--clr-light), 0.5);
+}
+
+picture,
+img,
+source {
+  display: inline-block;
+  width: 100%;
+  vertical-align: middle;
+}
+
+a {
+  display: inline-block;
+  text-decoration: none;
+}
+
+/*--------------------*/
+/* Utility classes    */
+/*--------------------*/
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+  max-width: 30rem;
+  padding: 3.5rem 1.5rem;
+  padding-inline: 1.5rem;
+  margin-inline: auto;
+  @include lg {
+    max-width: 75rem;
+  }
+}
+
+.text-center {
+  text-align: center;
+}
+
+/* colors */
+
+.bg-primary {
+  background-color: hsl(var(--clr-primary));
+}
+
+.bg-white {
+  background-color: hsl(var(--clr-white));
+}
+
+.text-secondary {
+  color: hsl(var(--clr-secondary));
+}
+
+.text-light {
+  color: hsl(var(--clr-light));
+}
+
+.text-white {
+  color: hsl(var(--clr-white));
+}
+
+/* typography */
+
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fs-300 {
+  font-size: var(--fs-300);
+}
+
+.fs-200 {
+  font-size: var(--fs-200);
+}
+
+.fw-700 {
+  font-weight: 700;
+}
+
+.fw-400 {
+  font-weight: 400;
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.rounded {
+  border-radius: 10px;
+}
+
+/*--------------------*/
+/* Main               */
+/*--------------------*/
+
+.bg-top {
+  position: absolute;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(../images/bg-pattern-top.svg);
+  background-repeat: no-repeat;
+  background-position: -30% -150px;
+  background-size: 85%;
+
+  @include md {
+    background-position: -70% -400px;
+    background-size: 70%;
+  }
+}
+
+.bg-bottom {
+  position: absolute;
+  z-index: 0;
+  width: 100vw;
+  height: 100vh;
+  background: url(../images/bg-pattern-bottom.svg);
+  background-repeat: no-repeat;
+  background-position: 250% 450px;
+  background-size: 85%;
+  @include md {
+    background-position: 170% 400px;
+    background-size: 70%;
+  }
+}
+
+main {
+  margin-top: auto;
+}
+
+.card {
+  max-width: 26rem;
+  position: relative;
+  margin-inline: auto;
+  box-shadow: 0 15px 35px hsl(var(--clr-secondary), 0.5);
+  overflow: hidden;
+  &-bg {
+    height: 150px;
+    background: url(../images/bg-pattern-card.svg) no-repeat;
+    background-size: cover;
+  }
+
+  &-avatar {
+    width: 7rem;
+    position: absolute;
+    z-index: 2;
+    inset: 150px 50% auto auto;
+    transform: translate(50%, -50%);
+    border-radius: 50%;
+  }
+
+  // avatar white background
+  &::after {
+    content: "";
+    width: 7rem;
+    aspect-ratio: 1;
+    position: absolute;
+    inset: 150px 50% auto auto;
+    transform: translate(50%, -50%) scale(1.1);
+    background-color: #fff;
+    border-radius: 50%;
+  }
+
+  &-text {
+    padding: 5rem 0 2rem 0;
+    h1,
+    h2 {
+      margin-bottom: 1rem;
+    }
+    h2 {
+      padding-bottom: 1rem;
+    }
+  }
+
+  &-text--data {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    border-top: 1px solid hsl(var(--clr-border));
+    padding-top: 2rem;
+    small {
+      display: block;
+      letter-spacing: 2px;
+    }
+  }
+}
+
+/*--------------------*/
+/* Fotter             */
+/*--------------------*/
+
+.attribution {
+  position: relative;
+  z-index: 1;
+  margin-top: auto;
+  margin-bottom: -18px;
+  font-size: 10px;
+  text-align: center;
+}
