@@ -4,11 +4,11 @@
 
 :root {
   /* colors */
-  --crl-org: 31 77% 52%;
-  --crl-cyan: 184 100% 22%;
-  --crl-darkCyan: 179 100% 13%;
-  --crl-white: 0 0% 100% / 0.75; /* (paragraphs) */
-  --crl-gray: 0 0% 95%; /* (background, headings, buttons) */
+  --clr-org: 31 77% 52%;
+  --clr-cyan: 184 100% 22%;
+  --clr-darkCyan: 179 100% 13%;
+  --clr-white: 0 0% 100% / 0.75; /* (paragraphs) */
+  --clr-gray: 0 0% 95%; /* (background, headings, buttons) */
 
   /* font-sizes */
   --fs-500: 2.5rem;
@@ -67,8 +67,8 @@ h6 {
 body {
   font-family: var(--ff-deca);
   font-size: var(--fs-300);
-  background-color: hsl(var(--crl-gray));
-  color: hsl(var(--crl-white));
+  background-color: hsl(var(--clr-gray));
+  color: hsl(var(--clr-white));
   line-height: 1.5;
   min-height: 100vh;
 }
@@ -105,35 +105,35 @@ picture {
 /* colors */
 
 .bg-org {
-  background-color: hsl(var(--crl-org));
+  background-color: hsl(var(--clr-org));
 }
 .bg-cyan {
-  background-color: hsl(var(--crl-cyan));
+  background-color: hsl(var(--clr-cyan));
 }
 .bg-darkCyan {
-  background-color: hsl(var(--crl-darkCyan));
+  background-color: hsl(var(--clr-darkCyan));
 }
 
 .bg-white {
-  background-color: hsl(var(--crl-white));
+  background-color: hsl(var(--clr-white));
 }
 
 .bg-gray {
-  background-color: hsl(var(--crl-gray));
+  background-color: hsl(var(--clr-gray));
 }
 
 .text-org {
-  color: hsl(var(--crl-org));
+  color: hsl(var(--clr-org));
 }
 .text-cyan {
-  color: hsl(var(--crl-cyan));
+  color: hsl(var(--clr-cyan));
 }
 .text-darkCyan {
-  color: hsl(var(--crl-darkCyan));
+  color: hsl(var(--clr-darkCyan));
 }
 
 .text-gray {
-  color: hsl(var(--crl-gray));
+  color: hsl(var(--clr-gray));
 }
 
 /* typography */
@@ -172,7 +172,7 @@ picture {
   display: inline-block;
   padding: 0.5rem 1.5rem;
   border-radius: 50px;
-  border: 2px solid hsl(var(--crl-gray));
+  border: 2px solid hsl(var(--clr-gray));
   text-decoration: none;
   /* transition: all 0.3s; */
 }
@@ -185,7 +185,7 @@ picture {
   height: 105%;
   width: 102%;
   z-index: -1;
-  background-color: hsl(var(--crl-gray));
+  background-color: hsl(var(--clr-gray));
   border-radius: 50px;
   transition: width 1s, opacity 0.6s ease;
 }
@@ -200,7 +200,7 @@ picture {
 
   .btn:hover,
   .btn:focus {
-    color: hsl(var(--crl-gray));
+    color: hsl(var(--clr-gray));
   }
 }
 
@@ -254,8 +254,8 @@ picture {
 .attribution {
   font-size: 11px;
   text-align: center;
-  color: hsl(var(--crl-cyan));
+  color: hsl(var(--clr-cyan));
 }
 .attribution a {
-  color: hsl(var(--crl-darkCyan));
+  color: hsl(var(--clr-darkCyan));
 }

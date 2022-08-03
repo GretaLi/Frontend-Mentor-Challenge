@@ -9,12 +9,12 @@
 
 :root {
   /* colors */
-  --crl-primary: 233, 47%, 7%;
-  --crl-secondary: 244, 38%, 16%;
-  --crl-accent: 277, 64%, 61%;
-  --crl-white: 0, 0%, 100%;
-  --crl-light: 0, 0%, 100%, 0.6;
-  --crl-body: 0, 0%, 100%, 0.75;
+  --clr-primary: 233, 47%, 7%;
+  --clr-secondary: 244, 38%, 16%;
+  --clr-accent: 277, 64%, 61%;
+  --clr-white: 0, 0%, 100%;
+  --clr-light: 0, 0%, 100%, 0.6;
+  --clr-body: 0, 0%, 100%, 0.75;
 
   /* font-sizes */
   --fs-600: 1.75rem;
@@ -46,15 +46,15 @@ html {
 body {
   font-family: var(--ff-deca);
   font-size: var(--fs-400);
-  background-color: hsl(var(--crl-primary));
-  color: hsl(var(--crl-body));
+  background-color: hsl(var(--clr-primary));
+  color: hsl(var(--clr-body));
   line-height: 1.5;
   min-height: 100vh;
 }
 
 ::selection {
-  background-color: hsl(var(--crl-primary), 0.5);
-  color: hsl(var(--crl-white));
+  background-color: hsl(var(--clr-primary), 0.5);
+  color: hsl(var(--clr-white));
 }
 
 picture,
@@ -165,39 +165,39 @@ span {
 /* colors */
 
 .bg-primary {
-  background-color: hsl(var(--crl-primary));
+  background-color: hsl(var(--clr-primary));
 }
 
 .bg-secondary {
-  background-color: hsl(var(--crl-secondary));
+  background-color: hsl(var(--clr-secondary));
 }
 
 .bg-accent {
-  background-color: hsl(var(--crl-accent));
+  background-color: hsl(var(--clr-accent));
 }
 
 .text-primary {
-  color: hsl(var(--crl-primary));
+  color: hsl(var(--clr-primary));
 }
 
 .text-secondary {
-  color: hsl(var(--crl-secondary));
+  color: hsl(var(--clr-secondary));
 }
 
 .text-accent {
-  color: hsl(var(--crl-accent));
+  color: hsl(var(--clr-accent));
 }
 
 .text-white {
-  color: hsl(var(--crl-white));
+  color: hsl(var(--clr-white));
 }
 
 .text-light {
-  color: hsl(var(--crl-light));
+  color: hsl(var(--clr-light));
 }
 
 .text-body {
-  color: hsl(var(--crl-body));
+  color: hsl(var(--clr-body));
 }
 
 /* typography */
@@ -247,13 +247,8 @@ span {
   flex-direction: column-reverse;
   &-img {
     height: 240px;
-    // background: linear-gradient(
-    //     hsl(var(--crl-accent), 0.6),
-    //     hsl(var(--crl-accent), 0.6)
-    //   ),
-    //   url(../images/image-header-mobile.jpg) no-repeat;
     background-image: url(../images/image-header-mobile.jpg);
-    background-color: hsl(var(--crl-accent));
+    background-color: hsl(var(--clr-accent));
     background-blend-mode: multiply;
     background-size: cover;
     background-repeat: no-repeat;
@@ -282,8 +277,8 @@ span {
     }
 
     p:hover {
-      border: 1px solid hsl(var(--crl-light));
-      box-shadow: 0px 0px 10px hsl(var(--crl-light));
+      border: 1px solid hsl(var(--clr-light));
+      box-shadow: 0px 0px 10px hsl(var(--clr-light));
       transform: scale(1.05);
       cursor: pointer;
     }
@@ -337,6 +332,6 @@ main {
   font-size: 10px;
   text-align: center;
   a {
-    color: hsl(var(--crl-body));
+    color: hsl(var(--clr-body));
   }
 }

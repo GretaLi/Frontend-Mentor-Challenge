@@ -6,12 +6,12 @@
 
 :root {
   /* primary color*/
-  --crl-accent: 158, 36%, 37%;
-  --crl-cream: 30, 38%, 92%;
+  --clr-accent: 158, 36%, 37%;
+  --clr-cream: 30, 38%, 92%;
   /* neutral color*/
-  --crl-dark: 212, 21%, 14%;
-  --crl-grayish: 228, 12%, 48%;
-  --crl-white: 0, 0%, 100%;
+  --clr-dark: 212, 21%, 14%;
+  --clr-grayish: 228, 12%, 48%;
+  --clr-white: 0, 0%, 100%;
   /* typography */
   --ff-sans: "Montserrat", sans-serif;
   --ff-serif: "Fraunces", serif;
@@ -74,15 +74,15 @@ li {
 body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
-  background-color: hsl(var(--crl-cream));
-  color: hsl(var(--crl-grayish));
+  background-color: hsl(var(--clr-cream));
+  color: hsl(var(--clr-grayish));
   line-height: 1.5;
   min-height: 100vh;
 }
 
 ::selection {
-  background-color: hsl(var(--crl-accent));
-  color: hsl(var(--crl-white));
+  background-color: hsl(var(--clr-accent));
+  color: hsl(var(--clr-white));
 }
 
 img,
@@ -149,27 +149,27 @@ a {
 
 /* colors */
 .bg-cream {
-  background: hsl(var(--crl-cream));
+  background: hsl(var(--clr-cream));
 }
 
 .bg-accent {
-  background: hsl(var(--crl-accent));
+  background: hsl(var(--clr-accent));
 }
 
 .bg-white {
-  background: hsl(var(--crl-white));
+  background: hsl(var(--clr-white));
 }
 
 .text-accent {
-  color: hsl(var(--crl-accent));
+  color: hsl(var(--clr-accent));
 }
 
 .text-dark {
-  color: hsl(var(--crl-dark));
+  color: hsl(var(--clr-dark));
 }
 
 .text-white {
-  color: hsl(var(--crl-white));
+  color: hsl(var(--clr-white));
 }
 
 .rounded {
@@ -262,7 +262,7 @@ a {
   text-align: center;
 }
 .attribution a {
-  color: hsl(var(--crl-accent));
+  color: hsl(var(--clr-accent));
 }
 
 @media (min-width: 768px) {

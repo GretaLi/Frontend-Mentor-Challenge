@@ -1,7 +1,7 @@
 body .bg {
   background: linear-gradient(
-      hsl(var(--crl-dark) / 0.5),
-      hsl(var(--crl-dark) / 0.5)
+      hsl(var(--clr-dark) / 0.5),
+      hsl(var(--clr-dark) / 0.5)
     ),
     url(../image/crew/background-crew-mobile.jpg) no-repeat;
   background-size: cover;
@@ -14,7 +14,7 @@ body .bg {
 }
 
 .content-img {
-  border-bottom: 1px solid hsl(var(--crl-divider));
+  border-bottom: 1px solid hsl(var(--clr-divider));
 }
 
 .content-img > * {
@@ -39,8 +39,8 @@ body .bg {
 @media (min-width: 600px) {
   body .bg {
     background: linear-gradient(
-        hsl(var(--crl-dark) / 0.5),
-        hsl(var(--crl-dark) / 0.5)
+        hsl(var(--clr-dark) / 0.5),
+        hsl(var(--clr-dark) / 0.5)
       ),
       url(../image/crew/background-crew-tablet.jpg) no-repeat;
     background-size: cover;
@@ -74,8 +74,8 @@ body .bg {
 @media (min-width: 992px) {
   body .bg {
     background: linear-gradient(
-        hsl(var(--crl-dark) / 0.5),
-        hsl(var(--crl-dark) / 0.5)
+        hsl(var(--clr-dark) / 0.5),
+        hsl(var(--clr-dark) / 0.5)
       ),
       url(../image/crew/background-crew-desktop.jpg) no-repeat;
     background-size: cover;

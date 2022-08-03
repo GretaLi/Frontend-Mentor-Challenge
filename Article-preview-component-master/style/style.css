@@ -7,11 +7,11 @@
 
 :root {
   /* color*/
-  --crl-veryDark: 217, 19%, 35%;
-  --crl-dark: 214, 17%, 51%;
-  --crl-grayish: 212, 23%, 69%;
-  --crl-light: 210, 46%, 95%;
-  --crl-white: 0, 0, 100%;
+  --clr-veryDark: 217, 19%, 35%;
+  --clr-dark: 214, 17%, 51%;
+  --clr-grayish: 212, 23%, 69%;
+  --clr-light: 210, 46%, 95%;
+  --clr-white: 0, 0, 100%;
   /* typography */
   --ff-sans: "Manrope", sans-serif;
 
@@ -48,15 +48,15 @@ li {
 body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
-  background-color: hsl(var(--crl-light));
-  color: hsl(var(--crl-grayish));
-  color: hsl(var(--crl-dark));
+  background-color: hsl(var(--clr-light));
+  color: hsl(var(--clr-grayish));
+  color: hsl(var(--clr-dark));
   line-height: 1.5;
   min-height: 100vh;
 }
 
 ::selection {
-  background-color: hsl(var(--crl-grayish));
+  background-color: hsl(var(--clr-grayish));
   color: white;
 }
 
@@ -126,7 +126,7 @@ a {
 
 /* colors */
 .bg-light {
-  background: hsl(var(--crl-light));
+  background: hsl(var(--clr-light));
 }
 
 .bg-white {
@@ -134,27 +134,27 @@ a {
 }
 
 .bg-dark {
-  background: hsl(var(--crl-dark));
+  background: hsl(var(--clr-dark));
 }
 
 .bg-very-dark {
-  background: hsl(var(--crl-veryDark));
+  background: hsl(var(--clr-veryDark));
 }
 
 .bg-grayish {
-  background: hsl(var(--crl-grayish));
+  background: hsl(var(--clr-grayish));
 }
 
 .text-very-dark {
-  color: hsl(var(--crl-veryDark));
+  color: hsl(var(--clr-veryDark));
 }
 
 .text-dark {
-  color: hsl(var(--crl-dark));
+  color: hsl(var(--clr-dark));
 }
 
 .text-grayish {
-  color: hsl(var(--crl-grayish));
+  color: hsl(var(--clr-grayish));
 }
 
 .rounded {
@@ -195,8 +195,8 @@ a {
   aspect-ratio: 1;
   border-radius: 50%;
   border: none;
-  background: hsl(var(--crl-light));
-  color: hsl(var(--crl-dark));
+  background: hsl(var(--clr-light));
+  color: hsl(var(--clr-dark));
   text-align: center;
   font-size: var(--fs-500);
   cursor: pointer;
@@ -207,7 +207,7 @@ a {
 }
 
 .btn-share[aria-expanded="true"] {
-  background: hsl(var(--crl-dark));
+  background: hsl(var(--clr-dark));
   color: white;
   transition: all 0.5s ease;
 }
@@ -256,7 +256,7 @@ a {
   inset: 0 0 0 0;
   --gap: 1rem;
   padding: 1.5rem 2.25rem;
-  background: hsl(var(--crl-veryDark));
+  background: hsl(var(--clr-veryDark));
   line-height: 1;
   font-size: 1.5rem;
   animation: expand-1 0.5s ease-in-out;
@@ -283,7 +283,7 @@ a {
   text-align: center;
 }
 .attribution a {
-  color: hsl(var(--crl-veryDark));
+  color: hsl(var(--clr-veryDark));
 }
 
 @media (min-width: 768px) {
@@ -326,7 +326,7 @@ a {
     bottom: -0.8rem;
     left: 50%;
     transform: translateX(-50%);
-    border-top: 1rem solid hsl(var(--crl-veryDark));
+    border-top: 1rem solid hsl(var(--clr-veryDark));
     border-right: 1rem solid transparent;
     border-left: 1rem solid transparent;
   }

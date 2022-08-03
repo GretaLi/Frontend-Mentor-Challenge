@@ -6,9 +6,9 @@
 
 :root {
   /* color*/
-  --crl-primary: 0, 0%, 8%;
-  --crl-secondary: 0, 0%, 41%;
-  --crl-white: 0, 0%, 98%;
+  --clr-primary: 0, 0%, 8%;
+  --clr-secondary: 0, 0%, 41%;
+  --clr-white: 0, 0%, 98%;
   /* typography */
   --ff-sans: "Epilogue", sans-serif;
 
@@ -73,15 +73,15 @@ li {
 body {
   font-family: var(--ff-sans);
   font-size: var(--fs-400);
-  background-color: hsl(var(--crl-white));
-  color: hsl(var(--crl-secondary));
+  background-color: hsl(var(--clr-white));
+  color: hsl(var(--clr-secondary));
   line-height: 1.5;
   min-height: 100vh;
 }
 
 ::selection {
-  background-color: hsl(var(--crl-secondary));
-  color: hsl(var(--crl-white));
+  background-color: hsl(var(--clr-secondary));
+  color: hsl(var(--clr-white));
 }
 
 img,
@@ -104,13 +104,13 @@ button {
 
 a {
   display: inline-block;
-  color: var(--crl-secondary);
+  color: var(--clr-secondary);
   text-decoration: none;
 }
 
 a:hover {
   transition: all 0.4s;
-  color: hsl(var(--crl-primary));
+  color: hsl(var(--clr-primary));
 }
 
 /* Sreen Reader Only */
@@ -177,19 +177,19 @@ a:hover {
 
 /* colors */
 .bg-white {
-  background: hsl(var(--crl-white));
+  background: hsl(var(--clr-white));
 }
 
 .text-primary {
-  color: hsl(var(--crl-primary));
+  color: hsl(var(--clr-primary));
 }
 
 .text-secondary {
-  color: hsl(var(--crl-secondary));
+  color: hsl(var(--clr-secondary));
 }
 
 .text-white {
-  color: hsl(var(--crl-white));
+  color: hsl(var(--clr-white));
 }
 
 .rounded {
@@ -275,7 +275,7 @@ a:hover {
   padding-right: 1.5rem;
   background: url(../images/icon-arrow-up.svg) no-repeat;
   background-position: right center;
-  color: hsl(var(--crl-primary));
+  color: hsl(var(--clr-primary));
 }
 
 .dropdown-menu {
@@ -311,7 +311,7 @@ a:hover {
     flex-direction: column;
     align-items: flex-start;
     padding: 4.75rem 1.5rem 0;
-    background-color: hsl(var(--crl-white));
+    background-color: hsl(var(--clr-white));
     overflow-y: scroll;
     transform: translateX(100%);
     transition: all 0.5s ease-in-out;
@@ -435,7 +435,7 @@ a:hover {
   text-align: center;
   line-height: 1rem;
   border-radius: 15px;
-  border: 2px solid hsl(var(--crl-secondary));
+  border: 2px solid hsl(var(--clr-secondary));
   cursor: pointer;
   transition: all 0.4s;
   /* User can not select the text */
@@ -446,7 +446,7 @@ a:hover {
 }
 
 .btn:hover {
-  border-color: hsl(var(--crl-primary));
+  border-color: hsl(var(--clr-primary));
 }
 
 .btn:active {
@@ -455,13 +455,13 @@ a:hover {
 
 .btn-primary {
   padding: 1rem 1.5rem;
-  background-color: hsl(var(--crl-primary));
-  color: hsl(var(--crl-white));
+  background-color: hsl(var(--clr-primary));
+  color: hsl(var(--clr-white));
   border-color: transparent;
 }
 
 .btn-primary:hover {
-  background-color: hsl(var(--crl-white));
+  background-color: hsl(var(--clr-white));
 }
 
 /*--------------------*/
@@ -513,5 +513,5 @@ a:hover {
   text-align: center;
 }
 .attribution a {
-  color: hsl(var(--crl-primary));
+  color: hsl(var(--clr-primary));
 }
