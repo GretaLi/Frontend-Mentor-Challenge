@@ -191,11 +191,9 @@ body {
   color: hsl(var(--clr-white));
 }
 
-picture,
-img,
-source {
+img {
   display: inline-block;
-  width: 100%;
+  max-width: 100%;
   vertical-align: middle;
 }
 
@@ -261,15 +259,14 @@ span {
   display: flex;
   flex-direction: column;
   justify-content: center;
-  min-height: 98vh;
+  min-height: 100vh;
   max-width: 30rem;
-  padding: 3.5rem 1.5rem;
   padding-inline: 1.5rem;
   margin-inline: auto;
 }
 @media (min-width: 992px) {
   .container {
-    max-width: 75rem;
+    max-width: 68rem;
   }
 }
 
@@ -378,15 +375,20 @@ span {
 .card {
   display: flex;
   flex-direction: column-reverse;
+  gap: 0;
 }
 .card-img {
-  height: 240px;
-  background-image: url(../images/image-header-mobile.jpg);
   background-color: hsl(var(--clr-accent));
-  background-blend-mode: multiply;
-  background-size: cover;
-  background-repeat: no-repeat;
   border-radius: 10px 10px 0 0;
+  overflow: hidden;
+}
+.card-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  mix-blend-mode: multiply;
+  opacity: 0.75;
 }
 .card-info {
   display: flex;
@@ -415,14 +417,10 @@ span {
 @media (min-width: 992px) {
   .card {
     flex-direction: row;
-    margin-bottom: auto;
+    justify-content: space-between;
   }
   .card-img {
     width: 50%;
-    height: auto;
-    background-image: url(../images/image-header-desktop.jpg);
-    background-size: cover;
-    background-position: center center;
     border-radius: 0px 10px 10px 0;
   }
   .card-info {
@@ -438,7 +436,7 @@ span {
     display: flex;
     align-items: flex-end;
     gap: 1rem;
-    padding-top: 2rem;
+    padding-top: 0rem;
   }
   .card-info--data > * {
     width: 33.3333333333%;
@@ -454,7 +452,6 @@ main {
 /*--------------------*/
 .attribution {
   margin-top: auto;
-  margin-bottom: -18px;
   font-size: 10px;
   text-align: center;
 }
