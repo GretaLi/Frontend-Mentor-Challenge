@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./images/favicon-32x32.png"
+    />
+    <title>Frontend Mentor | Todo app</title>
+    <link rel="stylesheet" href="style/style.css" />
+  </head>
+  <body class="light">
+    <header>
+      <div class="container">
+        <h1 class="fs-600 fw-bold uppercase">T o d o</h1>
+        <button class="toggle-theme"></button>
+      </div>
+    </header>
+    <div class="container">
+      <form action="" class="form">
+        <div class="form-input">
+          <button class="todo-btn--complete" type="button"></button>
+          <input type="text" class="" placeholder="Create a new todo..." />
+        </div>
+
+        <ul class="form-list">
+          <li class="form-info">
+            <p id="itemLeft">0 items left</p>
+            <div class="form-tabs fw-bold">
+              <button id="tabAll" type="button" class="text-primary">
+                All
+              </button>
+              <button id="tabActive" type="button">Active</button>
+              <button id="tabCompleted" type="button">Completed</button>
+            </div>
+            <button id="clearCompleted" type="button">Clear Completed</button>
+          </li>
+        </ul>
+      </form>
+      <h2 id="dragInstruction">Drag and drop to reorder list</h2>
+    </div>
+    <script src="app.js" defer></script>
+  </body>
+</html>

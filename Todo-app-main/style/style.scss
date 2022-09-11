@@ -1,0 +1,446 @@
+@import "breakpoints";
+/*----------------*/
+/* base           */
+/*----------------*/
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@400;700&display=swap");
+:root {
+  --clr-primary: 220, 98%, 61%;
+  --clr-accent: linear-gradient(
+    to right bottom,
+    hsl(192, 100%, 67%),
+    hsl(280, 87%, 65%)
+  );
+
+  --clr-light-300: 0, 0%, 98%;
+  --clr-light-400: 236, 33%, 92%;
+  --clr-light-500: 233, 11%, 84%;
+  --clr-light-600: 236, 9%, 61%;
+  --clr-light-700: 235, 19%, 35%;
+
+  --clr-dark-300: 235, 24%, 19%; // list background
+  --clr-dark-400: 235, 21%, 11%; // main background & border
+  --clr-dark-450: 235, 17%, 26%; // border
+  --clr-dark-500: 235, 21%, 4%; // shadow
+  --clr-dark-600: 234, 11%, 52%; // tabs, clear btn, item left
+  --clr-dark-650: 233, 14%, 35%; // completed color
+  --clr-dark-700: 234, 39%, 85%; // list color
+  $b1: hsl(233, 14%, 35%);
+  $b2: hsl(235, 21%, 4%);
+  --ff-body: "Josefin Sans", sans-serif;
+
+  --fs-600: 2rem;
+  --fs-500: 1.125rem;
+  --fs-400: 1rem;
+
+  --fw-regular: 400;
+  --fw-bold: 700;
+
+  --width: 30rem;
+
+  @include lg {
+    --fs-600: 2.5rem;
+    --fs-500: 1.5rem;
+    --fs-400: 1.125rem;
+
+    --width: 40rem;
+  }
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+html,
+body {
+  min-height: 100vh;
+  font-family: var(--ff-body);
+  font-size: var(--fs-400);
+  font-weight: var(--fw-regular);
+
+  -webkit-user-select: none; /* Safari */
+  -ms-user-select: none; /* IE 10 and IE 11 */
+  user-select: none; /* Standard syntax */
+}
+
+img,
+picture {
+  max-width: 100%;
+  display: inline-block;
+}
+
+li {
+  list-style: none;
+}
+
+button {
+  cursor: pointer;
+  background: none;
+}
+
+// typography
+.fs-600 {
+  font-size: var(--fs-600);
+}
+.fs-500 {
+  font-size: var(--fs-500);
+}
+.fs-400 {
+  font-size: var(--fs-400);
+}
+
+.fw-bold {
+  font-weight: var(--fw-bold);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.text-primary {
+  color: hsl(var(--clr-primary)) !important;
+}
+
+// util
+.container {
+  max-width: var(--width);
+  height: 100%;
+  margin: 0 auto;
+  padding: 1.5rem;
+}
+
+/*----------------*/
+/* main           */
+/*----------------*/
+
+header {
+  height: 15rem;
+  .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: 8rem;
+  }
+
+  @include lg {
+    height: 20rem;
+  }
+}
+h1 {
+  max-width: var(--width);
+  color: hsl(var(--clr-light-300));
+}
+h2 {
+  margin-top: 8rem;
+  text-align: center;
+  color: hsl(var(--clr-light-600));
+}
+
+// layout
+.form {
+  margin-top: -8rem;
+  &-input {
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    margin-bottom: 1rem;
+    padding: 1.5rem;
+    border-radius: 10px;
+    input[type="text"] {
+      width: 100%;
+      order: 1;
+      outline: none;
+      background: transparent;
+      caret-color: hsl(var(--clr-primary));
+      &::selection {
+        background-color: hsl(var(--clr-primary), 0.5);
+      }
+    }
+  }
+  &-list {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+  }
+  &-info {
+    order: 100;
+    padding: 1.5rem;
+    display: flex;
+    justify-content: space-between;
+  }
+  &-tabs {
+    position: absolute;
+    top: calc(100% + 1rem);
+    left: 0;
+    right: 0;
+    padding: 1.5rem;
+    text-align: center;
+    border-radius: 10px;
+    button {
+      padding: 0 0.5rem;
+      margin: 0 0.5rem;
+    }
+  }
+
+  @include lg {
+    margin-top: -10rem;
+    &-input {
+      margin-bottom: 1.5rem;
+    }
+    &-info {
+      padding: 1.5rem;
+    }
+    &-tabs {
+      position: static;
+      display: flex;
+      padding: 0;
+      button {
+        padding: 0;
+      }
+    }
+  }
+}
+
+// light theme
+.light {
+  background-color: hsl(var(--clr-light-400));
+  header {
+    background-image: url(../images/bg-mobile-light.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    @include lg {
+      background-image: url(../images/bg-desktop-light.jpg);
+    }
+  }
+  .toggle-theme {
+    width: 2rem;
+    aspect-ratio: 1;
+    background: url(../images/icon-sun.svg) no-repeat center center;
+    opacity: 1;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .form-input {
+    background: hsl(var(--clr-light-300));
+  }
+  .form-list {
+    background: hsl(var(--clr-light-300));
+    color: hsl(var(--clr-light-700));
+    box-shadow: 0px 20px 20px hsl(var(--clr-light-500), 0.5);
+  }
+  .form-info {
+    color: hsl(var(--clr-light-600));
+    button {
+      color: hsl(var(--clr-light-600));
+    }
+  }
+  .form-tabs {
+    background: hsl(var(--clr-light-300));
+    button {
+      color: hsl(var(--clr-light-600));
+    }
+  }
+
+  .todo {
+    border-bottom: 2px solid hsl(var(--clr-light-400));
+    &-btn--complete {
+      outline: 1px solid hsl(var(--clr-light-400));
+    }
+  }
+  transition: all 0.5s ease;
+}
+
+// dark theme
+.dark {
+  background-color: hsl(var(--clr-dark-400));
+  header {
+    background-image: url(../images/bg-mobile-dark.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center top;
+    @include lg {
+      background-image: url(../images/bg-desktop-dark.jpg);
+    }
+  }
+
+  .toggle-theme {
+    width: 2rem;
+    aspect-ratio: 1;
+    &:hover {
+      opacity: 0.6;
+    }
+  }
+
+  .form-input {
+    background: hsl(var(--clr-dark-300));
+  }
+
+  input[type="text"] {
+    color: hsl(var(--clr-dark-700));
+  }
+
+  .form-list {
+    background: hsl(var(--clr-dark-300));
+    color: hsl(var(--clr-dark-700));
+    box-shadow: 0px 20px 20px hsl(var(--clr-dark-500), 0.5);
+  }
+  .form-info {
+    color: hsl(var(--clr-dark-600));
+    button {
+      color: hsl(var(--clr-dark-600));
+    }
+  }
+  .form-tabs {
+    background: hsl(var(--clr-dark-300));
+    button {
+      color: hsl(var(--clr-dark-600));
+    }
+  }
+
+  .todo {
+    border-bottom: 2px solid hsl(var(--clr-dark-450));
+    &-btn--complete {
+      outline: 1px solid hsl(var(--clr-dark-450));
+    }
+    &-completed {
+      color: hsl(var(--clr-dark-650));
+    }
+  }
+  transition: all 0.5s ease;
+}
+
+@keyframes rotateDark {
+  0% {
+    background: url(../images/icon-sun.svg) no-repeat center center;
+    transform: rotate(0deg);
+  }
+  100% {
+    background: url(../images/icon-moon.svg) no-repeat center center;
+    transform: rotate(360deg);
+  }
+}
+
+@keyframes rotateLight {
+  0% {
+    background: url(../images/icon-moon.svg) no-repeat center center;
+    transform: rotate(0deg);
+  }
+  100% {
+    background: url(../images/icon-sun.svg) no-repeat center center;
+    transform: rotate(360deg);
+  }
+}
+
+// todo list layout & style
+
+.todo {
+  padding: 1.5rem;
+  display: flex;
+  gap: 1rem;
+  justify-content: space-between;
+  align-items: center;
+  cursor: pointer;
+  &-text {
+    order: 2;
+    margin-right: auto;
+  }
+  &-btn--complete {
+    position: relative;
+    z-index: 3;
+    order: 1;
+    flex-shrink: 0;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    &:hover {
+      background: var(--clr-accent);
+      outline: none;
+    }
+    &::before {
+      position: absolute;
+      content: "";
+      width: 1.5rem;
+      aspect-ratio: 1;
+      inset: 0 0 0 0;
+      border-radius: 50%;
+    }
+    &:hover::before {
+      background: url(../images/icon-check.svg) no-repeat center center;
+    }
+  }
+
+  &-btn--delete {
+    order: 3;
+    flex-shrink: 0;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    background: url(../images/icon-cross.svg) no-repeat;
+    background-position: center center;
+    opacity: 0;
+  }
+  &-completed {
+    text-decoration: line-through;
+    .todo-btn--complete {
+      outline: none;
+      background: var(--clr-accent);
+      &::before {
+        background: url(../images/icon-check.svg) no-repeat center center;
+      }
+    }
+  }
+}
+
+.todo:hover {
+  .todo-btn--delete {
+    opacity: 1;
+  }
+}
+
+@keyframes easeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes easeOut {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+// tab control
+.form-list.active {
+  .todo-completed {
+    display: none;
+  }
+}
+
+.form-list.completed {
+  .todo {
+    display: none;
+  }
+  .todo-completed {
+    display: flex;
+  }
+}
+
+.todo.dragging {
+  opacity: 0.5;
+}
